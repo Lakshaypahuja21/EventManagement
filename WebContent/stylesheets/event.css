@@ -1,0 +1,51 @@
+
+body,h1,h2,h3,h4,h5,h6 
+{
+	font-family: "Raleway", sans-serif
+}
+
+body, html 
+{
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 
+{
+  background-position: center;
+  background-size: cover;
+  background-image: url(images/ltbest.jpg);
+  min-height: 100%;
+}
+.eventimg
+{
+ 
+
+}
+
+.ms-bar .ms-button 
+{
+  padding: 16px;
+}
+
+.GeneratedMarquee {
+font-size:1.2em;
+line-height:1.3em;
+color:#FFFFFF;
+background-color:#CC0033;
+padding:0.3em;
+
+}
+textarea {
+  resize: none;
+}
+
+.mapouter
+{
+	position:relative;text-align:right;height:130px;width:250px;}.gmap_canvas {overflow:hidden;
+	background:none!important;
+	height:130px;
+	width:250px;
+}
+   
