@@ -74,14 +74,19 @@ function showRegForm() {
     		<a href="#home" class="ms-bar-item ms-button ms-wide">67th Milestone</a>
     		<!-- Right-sided navbar links -->
     		<div class="ms-right ms-hide-small">
-     			<a href="#work" class="ms-bar-item ms-button"><i class="fa fa-th"></i> HOME</a>
-      			<a href="#about" class="ms-bar-item ms-button">ABOUT</a>
-      			<a href="#team" class="ms-bar-item ms-button"><i class="fa fa-user"></i> TEAM</a>
-      			<a href="#pricing" class="ms-bar-item ms-button"><i class="fa fa-usd"></i> EVENTS</a>
-      			<a href="#contact" class="ms-bar-item ms-button"><i class="fa fa-envelope"></i> CONTACT</a>
-      			<a href="register.jsp" class="ms-bar-item ms-button"><i class="fa fa-envelope"></i> REGISTER</a>
-
+  
+  <a href="#about" onclick="ms_close()" class="ms-bar-item ms-button">ABOUT</a>
+  <a href="#team" onclick="ms_close()" class="ms-bar-item ms-button">TEAM</a>
+  <a href="#events" onclick="ms_close()" class="ms-bar-item ms-button">EVENTS</a>
+  <a href="#contact" onclick="ms_close()" class="ms-bar-item ms-button">CONTACT</a>
+  <a href="register.jsp" onclick="ms_close()" class="ms-bar-item ms-button">REGISTER</a>
+  <a href="index.jsp" onclick="ms_close()" class="ms-bar-item ms-button">Admin</a>
+     			
     		</div>
+    		
+    		
+   
+  
     		<!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
     		<a href="javascript:void(0)" class="ms-bar-item ms-button ms-right ms-hide-large ms-hide-medium" onclick="ms_open()">
@@ -255,17 +260,14 @@ function showRegForm() {
 	</div>
 
 	<footer class="ms-center ms-black ms-padding-64">
-		<a href="#home" class="ms-button ms-light-grey"><i class="fa fa-arrow-up ms-margin-right"></i>To the top</a>
-		<div class="ms-xlarge ms-section">
-		    <i class="fa fa-facebook-official ms-hover-opacity"></i>
-		    <i class="fa fa-instagram ms-hover-opacity"></i>
-		    <i class="fa fa-snapchat ms-hover-opacity"></i>
-            <i class="fa fa-pinterest-p ms-hover-opacity"></i>
-		    <i class="fa fa-twitter ms-hover-opacity"></i>
-		    <i class="fa fa-linkedin ms-hover-opacity"></i>
-		</div>
-		<p>Powered by <a href="https://www.msschools.com/mscss/default.asp" title="ms.CSS" target="_blank" class="ms-hover-text-green">ms.css</a></p>
-	</footer>
+  <a href="#home" class="ms-button ms-light-grey"><i class="fa fa-arrow-up ms-margin-right"></i>To the top</a>
+  <div class="ms-xlarge ms-section">
+    <i class="fa fa-facebook-official ms-hover-opacity"></i>
+    <i class="fa fa-instagram ms-hover-opacity"></i>
+  </div>
+  <p>67 Milestone</p>
+</footer>
+ 
 
 	<script type="text/javascript" src="stylesheets/register.css"></script>
 </body>

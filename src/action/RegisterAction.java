@@ -87,7 +87,7 @@ public class RegisterAction extends HttpServlet {
 			
 			try{  
 				Class.forName("com.mysql.jdbc.Driver");  
-				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement","root","root");  
+				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement?autoReconnect=true&useSSL=false","root","root");  
 				
 				PreparedStatement stmt = con.prepareStatement("insert into registerationbts(firstnamebts,lastnamebts,emailbts,contactbts,collegebts,teambts,is_active,entry_date) values(?,?,?,?,?,?,?,?)");
 				stmt.setString(1, registerBeans.getFirstnamebts());

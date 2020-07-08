@@ -76,7 +76,11 @@ public class RegisterActionMun extends HttpServlet {
 		registerBeansMun.setCollegemun(collegemun);
 		registerBeansMun.setCommitteemun(committeemun);
 		registerBeansMun.setPortfoliomun(portfoliomun);
-		registerBeansMun.setTeammun(Integer.parseInt(teammun));
+		if(teammun != null && teammun.length()>0) {
+			registerBeansMun.setTeammun(Integer.parseInt(teammun));
+		} else {
+			registerBeansMun.setTeammun(0);
+		}
 		registerBeansMun.setIs_active(1);
 		registerBeansMun.setEntry_date(new Date().toString());
 		
@@ -95,7 +99,7 @@ public class RegisterActionMun extends HttpServlet {
 			
 			try{  
 				Class.forName("com.mysql.jdbc.Driver");  
-				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement","root","root");  
+				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement?autoReconnect=true&useSSL=false","root","root");  
 				
 				PreparedStatement stmt = con.prepareStatement("insert into registerationmun(firstnamemun,lastnamemun,emailmun,contactmun,collegemun,committeemun,portfoliomun,teammun,is_active,entry_date) values(?,?,?,?,?,?,?,?,?,?)");
 				stmt.setString(1, registerBeansMun.getFirstnamemun());

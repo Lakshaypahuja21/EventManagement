@@ -55,6 +55,7 @@ function checkContactUsForm() {
       <a href="#pricing" class="ms-bar-item ms-button"><i class="fa fa-music"></i> EVENTS</a>
       <a href="#contact" class="ms-bar-item ms-button"><i class="fa fa-envelope"></i> CONTACT</a>
       <a href="register.jsp" class="ms-bar-item ms-button"><i class="fa fa-plus"></i> REGISTER</a>
+      <a href="index.jsp" class="ms-bar-item ms-button"><i class="fa fa-key"></i> Admin</a>
 
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
@@ -67,12 +68,13 @@ function checkContactUsForm() {
 
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="ms-sidebar ms-bar-block ms-black ms-card ms-animate-left ms-hide-medium ms-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="ms_close()" class="ms-bar-item ms-button ms-large ms-padding-16">Close �</a>
+  <a href="javascript:void(0)" onclick="ms_close()" class="ms-bar-item ms-button ms-large ms-padding-16">Close ×</a>
   <a href="#about" onclick="ms_close()" class="ms-bar-item ms-button">ABOUT</a>
   <a href="#team" onclick="ms_close()" class="ms-bar-item ms-button">TEAM</a>
   <a href="#events" onclick="ms_close()" class="ms-bar-item ms-button">EVENTS</a>
   <a href="#contact" onclick="ms_close()" class="ms-bar-item ms-button">CONTACT</a>
-  <a href="#register" onclick="ms_close()" class="ms-bar-item ms-button">REGISTER</a>
+  <a href="register.jsp" onclick="ms_close()" class="ms-bar-item ms-button">REGISTER</a>
+  <a href="index.jsp" onclick="ms_close()" class="ms-bar-item ms-button">Admin</a>
 </nav>
 
 <!-- Header with full-height image -->
@@ -98,22 +100,22 @@ function checkContactUsForm() {
     <div class="ms-quarter">
       <i class="fa fa-music ms-margin-bottom ms-jumbo ms-center"></i>
       <p class="ms-large">Cultural Events</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Your body speaks. Dance expresses your emotions. Singing makes you feel on the inside. Theatre unveils your thoughts into action. How about trying out letting our body loose and let it speak? Register now and hold onto the marvelous opportunity in this journey!</p>
     </div>
     <div class="ms-quarter">
       <i class="fa fa-users ms-margin-bottom ms-jumbo"></i>
       <p class="ms-large">Management Events</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Managing is an art. And an art is how you manage. The art of management is not easy. But is easy once you try it passionately. It is not how you manage, it is much more than that. It reaches you through experience and you experience it through opportunities. So, register now for the amazing experience showcasing your management skills!</p>
     </div>
     <div class="ms-quarter">
       <i class="fa fa-microchip ms-margin-bottom ms-jumbo"></i>
       <p class="ms-large">Technical Events</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Learning is feasty when you get a reward for it. Learning is fun when you enjoy it. Learning takes you to another whole level of development. So, to gain all of it as an experience and showcase your skills with unique techniques, register now!</p>
     </div>
     <div class="ms-quarter">
       <i class="fa fa-futbol-o ms-margin-bottom ms-jumbo"></i>
       <p class="ms-large">Sports</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Sports develops personality, Builds stamina, principles of discipline, correction of mistakes, and unity.  A sport speaks its own language, doesn't differentiate amongst the players. All it sees is the hardwork and discipline it has brought to  life and of course, honesty. Register now to be a part of an amazing event and unleashing your talent in sports!</p>
     </div>
   </div>
 </div>
@@ -123,12 +125,12 @@ function checkContactUsForm() {
   <div class="ms-row-padding">
     <div class="ms-col m6">
       <h3>BML Munjal University</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
+      <p>Named after the chairman and founder of the Hero Group, Dr. Brijmohan Lall Munjal, BML Munjal University is engaged in creating, preserving and imparting internationally benchmarked knowledge and skills to a diverse community of students from across the world. BMU’s aim is to nurture ethical leaders who are skilled, knowledgeable and have the life skills needed to lead organisations to success.</p>
       <p><a href="https://www.bmu.edu.in/" class="ms-button ms-black"><i class="fa fa-th"> </i> View university website</a></p>
       <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en"><i class="fa fa-instagram ms-hover-opacity"></i></a>
     </div>
     <div class="ms-col m6">
-      <img class="ms-image ms-round-large" src="images/concert3.jpg" alt="Concert3" width="700" height="394">
+      <img class="ms-image ms-round-large" src="images/bml_photo.jpg" alt="bml" width="700" height="394">
     </div>
   </div>
 </div>
@@ -139,12 +141,12 @@ function checkContactUsForm() {
   <div class="ms-row-padding">
     <div class="ms-col m6">
       <h3>67th Milestone</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br>tempor incididunt ut labore et dolore.</p>
-      <p><a href="file:///C:/Users/parik/Desktop/webpage/sub67milestone2020.html" class="ms-button ms-black"><i class="fa fa-th"> </i> View previous edition highlights</a></p>
+      <p>The 67th Milestone is a themed fest hosting a wide range of artists, performers, athletes and technicians from colleges all over North India, especially Delhi and Delhi NCR. The uniqueness of the 67th Milestone lies in the opportunities and once in a lifetime experiences for it’s attendees.We at BMU strive at being founts of values and virtues sources that emanate values and virtues that create better societies and Education is one of the most significant tools to do so. With the aim of Elevating through Education we are trying to establish a connecting link between the resourceful and the deprived.</p>
+      <p><a href="sub67highlights.jsp" class="ms-button ms-black"><i class="fa fa-th"> </i> View previous edition highlights</a></p>
       <a href="https://www.instagram.com/67thmilestone_heroschallenge/?hl=en"><i class="fa fa-instagram ms-hover-opacity"></i></a>
     </div>
     <div class="ms-col m6">
-      <img class="ms-image ms-round-large" src="images/concert2.jpeg" alt="Concert3" width="700" height="394">
+      <img class="ms-image ms-round-large" src="images/concert3.jpg" alt="Concert3" width="700" height="394">
     </div>
   </div>
 </div>
@@ -156,7 +158,7 @@ function checkContactUsForm() {
   <div class="ms-row-padding ms-grayscale" style="margin-top:64px">
     <div class="ms-col l3 m6 ms-margin-bottom">
       <div class="ms-card">
-        <img src="parikshit.jpeg" alt="Parikshit" style="width:100%; height:384px;">
+        <img src="images/parikshit.jpeg" alt="Parikshit" style="width:100%; height:300px;">
         <div class="ms-container">
           <h3>Parikshit</h3>
           <p class="ms-opacity">Marketing Head</p>
@@ -167,7 +169,7 @@ function checkContactUsForm() {
     </div>
     <div class="ms-col l3 m6 ms-margin-bottom">
       <div class="ms-card">
-        <img src="manas.png" alt="Manas" style="width:100%; height:384px;">
+        <img src="images/manas.png" alt="Manas" style="width:100%; height:300px;">
         <div class="ms-container">
           <h3>Manas Yadav</h3>
           <p class="Sponsorship head">Art Director</p>
@@ -176,9 +178,9 @@ function checkContactUsForm() {
         </div>
       </div>
     </div>
-    <div class="ms-col l3 m6 ms-margin-bottom">
+    <div class="ms-col l3 m6 ms-margin-bottom" >
       <div class="ms-card">
-        <img src="lakshay.jpeg" alt="Lakshay" style="width:100%; height:384px;">
+        <img src="images/lakshay.jpeg" alt="Lakshay" style="width:100%; height:300px;">
         <div class="ms-container">
           <h3>Lakshay</h3>
           <p class="ms-opacity">Web Designer</p>
@@ -187,7 +189,7 @@ function checkContactUsForm() {
         </div>
       </div>
     </div>
-    <div class="ms-col l3 m6 ms-margin-bottom">
+    <!-- <div class="ms-col l3 m6 ms-margin-bottom">
       <div class="ms-card">
         <img src="#" alt="Dev" style="width:100%">
         <div class="ms-container">
@@ -196,7 +198,7 @@ function checkContactUsForm() {
           <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
           <p><button class="ms-button ms-light-grey ms-block"><i class="fa fa-envelope"></i> Contact</button></p>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </div>
@@ -234,22 +236,22 @@ function checkContactUsForm() {
       <img src="images/ritviz.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A phone">
     </div>
     <div class="ms-col l3 m6">
-      <img src="images/maninder.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A drone">
+      <img src="images/star_night2.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A drone">
     </div>
     <div class="ms-col l3 m6">
-      <img src="images/lt.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="Soundbox">
+      <img src="images/lt1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="Soundbox">
     </div>
   </div>
 
   <div class="ms-row-padding ms-section">
     <div class="ms-col l3 m6">
-      <img src="images/maninder.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tablet">
+      <img src="images/star_night1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tablet">
     </div>
     <div class="ms-col l3 m6">
       <img src="images/dance.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A camera">
     </div>
     <div class="ms-col l3 m6">
-      <img src="images/lt1.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A typewriter">
+      <img src="images/ra_DJ.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A typewriter">
     </div>
     <div class="ms-col l3 m6">
       <img src="images/ritviz.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tableturner">
@@ -259,7 +261,7 @@ function checkContactUsForm() {
 
 <!-- Modal for full size images on click-->
 <div id="modal01" class="ms-modal ms-black" onclick="this.style.display='none'">
-  <span class="ms-button ms-xxlarge ms-black ms-padding-large ms-display-topright" title="Close Modal Image">�</span>
+  <span class="ms-button ms-xxlarge ms-black ms-padding-large ms-display-topright" title="Close Modal Image">×</span>
   <div class="ms-modal-content ms-animate-zoom ms-center ms-transparent ms-padding-64">
     <img id="img01" class="ms-image">
     <p id="caption" class="ms-opacity ms-large"></p>
@@ -272,7 +274,7 @@ function checkContactUsForm() {
     <div class="ms-col m6">
       <h3>News and Updates</h3>
     </div>
-      <marquee class="GeneratedMarquee" direction="left" scrollamount="11" behavior="scroll">News and updates here!</marquee>
+      <marquee class="GeneratedMarquee" direction="left" scrollamount="11" behavior="scroll">Star Nights @ 10pm &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	&nbsp;| &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	MUN speakers debate started &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	| &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	  Beat the street award ceremony at 9pm</marquee>
     </div>
   </div>
     <!-- <div class="ms-col m6">
@@ -304,18 +306,18 @@ function checkContactUsForm() {
         <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Buzz</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Buzz</a>
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Fashon Fiest</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Buzz</a>
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Theatre Phnatamoica</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Buzz</a>  
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Street Play</a>  
         </li>
         <li class="ms-padding-16">
         </li>
         <li class="ms-light-grey ms-padding-24">
-          <button class="ms-button ms-black ms-padding-large">Register</button>
+          <button class="ms-button ms-black ms-padding-large" action="register.jsp">Register</button>
         </li>
       </ul>
     </div>
@@ -326,18 +328,18 @@ function checkContactUsForm() {
         <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Hackthon</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Hackthon</a>
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">CTF</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Hackthon</a>
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Robo Race</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Hackthon</a>  
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Video editing</a>  
         </li>
         <li class="ms-padding-16">
         </li>
         <li class="ms-light-grey ms-padding-24">
-          <button class="ms-button ms-black ms-padding-large">Register</button>
+          <button class="ms-button ms-black ms-padding-large" action="register.jsp">Register</button>
         </li>
       </ul>
     </div>
@@ -348,18 +350,18 @@ function checkContactUsForm() {
         <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">MUN</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">MUN</a>
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Stock market</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">MUN</a>
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Start-up</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">MUN</a>  
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">traesure hunt</a>  
         </li>
         <li class="ms-padding-16">
         </li>
         <li class="ms-light-grey ms-padding-24">
-          <button class="ms-button ms-black ms-padding-large">Register</button>
+          <button class="ms-button ms-black ms-padding-large" action="register.jsp">Register</button>
         </li>
       </ul>
     </div>
@@ -418,9 +420,8 @@ function checkContactUsForm() {
       <p><input class="ms-input ms-border" type="text" placeholder="Email" name="Email" id="email"></p>
       <p>Choose a subject <select id="subject" name="subject">
       <option value="Buzz">Buzz</option>
-      <option value="Buzz">Buzz</option>
-      <option value="Buzz">Buzz</option>
-      <option value="Buzz">Buzz</option>
+      <option value="Mun">MUN</option>
+      <option value="Bts">BTS</option>
       </select></p>
       <p><textarea name="message" id="message" rows="5" cols="229" placeholder="Message (Max limit: 100 words)"></textarea></p>
 

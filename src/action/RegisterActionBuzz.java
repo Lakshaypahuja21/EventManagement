@@ -86,7 +86,7 @@ System.out.println("inside post:::::::::::::::::::");
 			
 			try{  
 				Class.forName("com.mysql.jdbc.Driver");  
-				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement","root","root");  
+				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement?autoReconnect=true&useSSL=false","root","root");  
 				
 				PreparedStatement stmt = con.prepareStatement("insert into registerationbuzz(firstnamebuzz,lastnamebuzz,emailbuzz,contactbuzz,collegebuzz,teambuzz,is_active,entry_date) values(?,?,?,?,?,?,?,?)");
 				stmt.setString(1, registerBeansBuzz.getFirstnamebuzz());

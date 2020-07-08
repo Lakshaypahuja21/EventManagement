@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>EventManagement</display-name>
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>event.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <description></description>
@@ -73,5 +73,45 @@
   <servlet-mapping>
     <servlet-name>RegisterActionBuzz</servlet-name>
     <url-pattern>/RegisterActionBuzz</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegisterBuzzAction</display-name>
+    <servlet-name>RegisterBuzzAction</servlet-name>
+    <servlet-class>action.RegisterBuzzAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterBuzzAction</servlet-name>
+    <url-pattern>/RegisterBuzzAction</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegistrationDetailsBuzzAction</display-name>
+    <servlet-name>RegistrationDetailsBuzzAction</servlet-name>
+    <servlet-class>action.RegistrationDetailsBuzzAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrationDetailsBuzzAction</servlet-name>
+    <url-pattern>/RegistrationDetailsBuzzAction</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RegistrationDetailsMunAction</display-name>
+    <servlet-name>RegistrationDetailsMunAction</servlet-name>
+    <servlet-class>action.RegistrationDetailsMunAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrationDetailsMunAction</servlet-name>
+    <url-pattern>/RegistrationDetailsMunAction</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginAction</display-name>
+    <servlet-name>LoginAction</servlet-name>
+    <servlet-class>action.LoginAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginAction</servlet-name>
+    <url-pattern>/LoginAction</url-pattern>
   </servlet-mapping>
 </web-app>
