@@ -60,10 +60,11 @@ public class LoginAction extends HttpServlet {
 		}
 		
 		if(validation_status == 1) {
+			request.getSession().setAttribute("username", username);
 			request.getRequestDispatcher("/Event_admin.jsp").forward(request,response);
 		} else {
 			request.setAttribute("error_msg","Invalid username or password");
-			request.getRequestDispatcher("/event.jsp").forward(request,response);
+			request.getRequestDispatcher("/index.jsp").forward(request,response);
 		}
 	}
 

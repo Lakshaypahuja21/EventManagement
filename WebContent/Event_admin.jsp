@@ -9,74 +9,124 @@
 <html>
 <head>
 	<title>AdminSite</title>
-		<link rel="stylesheet" type="text/css" href="stylesheets/bootmin.css">
-		<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="stylesheets/Event_admin.css">
-		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
 
-	
-		<h1 style align = "center">Admin Side Page </h1>
-		<div class="row">
-			<div class = "col-lg-3 col-md-3 ">
-				<table class="table table-striped table table-bordered">
-  					<tr>
-  						<th>Page Names</th>
- 					</tr>
- 					<tr>
- 					    <td id="id_1">
- 					    	<div class="dropdown">
-								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							    Home Page
-							    	<span class="caret"></span>
-							    </button>
- 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-							    	<li id= "tableheaderimage"><a href="#">Header Image Insert & View </a></li>							    	
-							    	<li id= "tablehomeimages"><a href="#">Home Images Insert & View </a></li>
-							    	<li id= "tablenews"><a href="#">News Insert & View</a></li>				    								     	
-							    </ul>
-							</div>
- 					    </td>
- 					</tr>
- 					<tr>
- 					    <td id="id_2" >
-							<div class="dropdown">
-								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							    Highlights
-							    	<span class="caret"></span>
-							    </button> 
-							    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-							    	<li id= "tablehighlightsinsert"><a href="#">Highlights Insert </a></li>
-							    	<li id= "tablehighlightsview"><a href="#">Highlights View </a></li>			    								     	
-							    </ul>								
-							</div>
- 					    </td>
- 					</tr>
- 					<tr>
- 					    <td id="id_3">
- 					    	<div class="dropdown">
-								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-							    Events
-							    	<span class="caret"></span>
-							    </button>
- 								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-							    	<li id="tableeventinsert"><a href="#">Insert Event</a></li>
-							    	<li id="tableeventview"><a href="#">View & Modify</a></li>
-							    </ul>
-							</div>
- 					    </td>
- 					</tr>
- 					<tr>
- 					    <td id="tablecontactus">Contact Us Data</td>
- 					</tr>
- 					<tr>
- 					    <td id="tableregistrationdata">Registration Data</td>
- 					</tr>
- 				</table>
-			</div>
-			
+.sidenav {
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  width: 100%;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+
+}
+
+.dropbtn2 {
+  background-color: #439546;
+  width: 100%;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+
+}
+
+.dropdown {
+
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+font-size: 14px;
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+</style>
+<body>
+<div class="sidenav">
+  <div class="dropdown">
+  <button class="dropbtn">Home Page</button>
+  <div class="dropdown-content">
+  	<a href="#">Header Image Insert & View </a><hr/>					    	
+	<a href="#">Home Images Insert & View </a><hr/>
+	<a href="#">News Insert & View</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn2">Highlights</button>
+  <div class="dropdown-content">
+  	<a href="#">Highlights Insert </a> <hr/>
+	<a href="#">Highlights View </a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Events</button>
+  <div class="dropdown-content">
+  	<a href="#">Insert Event</a> <hr/>
+	<a href="#">View & Modify</a>
+  </div>
+</div>
+<a href="ContactDetailsAction"><button class="dropbtn2">Contact Us</button></a>
+<a href="RegistrationDetailsAction"><button class="dropbtn">Registration</button></a>
+</div>
+
+<div class="main">
+  <h2>Welcome <%=request.getSession().getAttribute("username")%></h2>
+  <p>
+
 
 			<div class = "col-lg-9 col-md-9 ">
 
@@ -704,7 +754,12 @@ if(registerList != null && registerList.size()>0) {
 		  					
 				</div>		
 			</div>
-		</div>
+		</div>  
+  
+  
+  </p>
+</div>
+
 <script type="text/javascript" src="js/Event_admin.js"></script>
 	
 </body>
