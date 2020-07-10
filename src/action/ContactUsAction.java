@@ -83,7 +83,7 @@ public class ContactUsAction extends HttpServlet {
 		
 		
 		contactUsBeans.setIs_active(1);
-		contactUsBeans.setEntry_date(new Date());
+		contactUsBeans.setEntry_date(new Date().toString());
 		
 		// Database save activity will start from here !!!
 		System.out.println(contactUsBeans.getName());

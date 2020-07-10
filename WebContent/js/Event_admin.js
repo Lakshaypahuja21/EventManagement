@@ -221,3 +221,34 @@ window.onclick = function(event) {
     modalbuzz.style.display = "none";
   }
 }
+
+
+
+
+//contact
+
+//Get the modal
+var modalC = document.getElementById("ModalC");
+
+// Get the button that opens the modal
+var btnC = document.getElementById("myC");
+
+// Get the <span> element that closes the modal
+var spanC = document.getElementsByClassName("close")[4];
+
+// When the user clicks the button, open the modal 
+btnC.onclick = function() {
+  modalC.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+spanC.onclick = function() {
+  modalC.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modalC) {
+    modalC.style.display = "none";
+  }
+}

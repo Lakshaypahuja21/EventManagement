@@ -12,8 +12,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="stylesheets/event.css">
 <link rel="stylesheet" href="stylesheets/font.css">
+<link rel="stylesheet" href="stylesheets/bootstrap.css">
 <link rel="stylesheet" href="stylesheets/fontsmin.css">
 <link rel="stylesheet" href="design/css/font-awesome.min.css">
+
+<script src="js/bootstrap.js"></script>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="/resources/demos/style.css">
@@ -52,12 +55,13 @@ function checkContactUsForm() {
     <div class="ms-right ms-hide-small">
       <a href="#about" class="ms-bar-item ms-button">ABOUT</a>
       <a href="#team" class="ms-bar-item ms-button"><i class="fa fa-address-book"></i> TEAM</a>
-      <a href="#pricing" class="ms-bar-item ms-button"><i class="fa fa-music"></i> EVENTS</a>
+      <a href="manastrial.jsp" class="ms-bar-item ms-button"><i class="fa fa-music"></i> EVENTS</a>
       <a href="#contact" class="ms-bar-item ms-button"><i class="fa fa-envelope"></i> CONTACT</a>
       <a href="register.jsp" class="ms-bar-item ms-button"><i class="fa fa-plus"></i> REGISTER</a>
       <a href="index.jsp" class="ms-bar-item ms-button"><i class="fa fa-key"></i> Admin</a>
 
     </div>
+    
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
     <a href="javascript:void(0)" class="ms-bar-item ms-button ms-right ms-hide-large ms-hide-medium" onclick="ms_open()">
@@ -78,17 +82,17 @@ function checkContactUsForm() {
 </nav>
 
 <!-- Header with full-height image -->
-<header class="bgimg-1 ms-display-container ms-grayscale-min" id="home">
+<header class="bgimg-1 ms-display-container ms-grayscale-min" id="home" style="background-image:url(images/ltbest.jpg)">
   <div class="ms-display-left ms-text-white" style="padding:48px">
-    <span class="ms-jumbo ms-hide-small">Educate to Elevate</span><br>
+    <span class="ms-jumbo ms-hide-small" style="color:white">Educate to Elevate</span><br>
     <span class="ms-xxlarge ms-hide-large ms-hide-medium">Educate to Elevate</span><br>
-    <span class="ms-large">Fest for a cause</span>
+    <span class="ms-large" style="color:white">Fest for a cause</span>
     <p><a href="#about" class="ms-button ms-white ms-padding-large ms-large ms-margin-top ms-opacity ms-hover-opacity-off
       ">A Techno-Cultural-Management and Sports Fest</a></p>
   </div> 
   <div class="ms-display-bottomleft ms-text-grey ms-large" style="padding:24px 48px">
-    <i class="fa fa-facebook-official ms-hover-opacity"></i>
-    <i class="fa fa-instagram ms-hover-opacity"></i>
+    <a href="https://www.bmu.edu.in/"><i class="fa fa-creative-commons"> </i> </a>
+    <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en"><i class="fa fa-instagram ms-hover-opacity"></i></a>
   </div>
 </header>
 
@@ -156,7 +160,7 @@ function checkContactUsForm() {
   <h3 class="ms-center">THE TEAM</h3>
   <p class="ms-center ms-large">The ones who run this Fest</p>
   <div class="ms-row-padding ms-grayscale" style="margin-top:64px">
-    <div class="ms-col l3 m6 ms-margin-bottom">
+    <div class="ms-col l4 m6 ms-margin-bottom">
       <div class="ms-card">
         <img src="images/parikshit.jpeg" alt="Parikshit" style="width:100%; height:300px;">
         <div class="ms-container">
@@ -167,7 +171,7 @@ function checkContactUsForm() {
         </div>
       </div>
     </div>
-    <div class="ms-col l3 m6 ms-margin-bottom">
+    <div class="ms-col l4 m6 ms-margin-bottom">
       <div class="ms-card">
         <img src="images/manas.png" alt="Manas" style="width:100%; height:300px;">
         <div class="ms-container">
@@ -178,7 +182,7 @@ function checkContactUsForm() {
         </div>
       </div>
     </div>
-    <div class="ms-col l3 m6 ms-margin-bottom" >
+    <div class="ms-col l4 m6 ms-margin-bottom" >
       <div class="ms-card">
         <img src="images/lakshay.jpeg" alt="Lakshay" style="width:100%; height:300px;">
         <div class="ms-container">
@@ -236,10 +240,10 @@ function checkContactUsForm() {
       <img src="images/ritviz.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A phone">
     </div>
     <div class="ms-col l3 m6">
-      <img src="images/star_night2.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A drone">
+      <img src="images/dance.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A drone">
     </div>
     <div class="ms-col l3 m6">
-      <img src="images/lt1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="Soundbox">
+      <img src="images/ritviz.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="Soundbox">
     </div>
   </div>
 
@@ -248,13 +252,13 @@ function checkContactUsForm() {
       <img src="images/star_night1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tablet">
     </div>
     <div class="ms-col l3 m6">
-      <img src="images/dance.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A camera">
+      <img src="images/star_night2.jpeg"  style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A camera">
     </div>
     <div class="ms-col l3 m6">
       <img src="images/ra_DJ.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A typewriter">
     </div>
     <div class="ms-col l3 m6">
-      <img src="images/ritviz.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tableturner">
+      <img src="images/lt1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tableturner">
     </div>
   </div>
 </div>
@@ -294,9 +298,52 @@ function checkContactUsForm() {
     </div> -->
   
 
-<!-- Pricing Section -->
+
+<!-- Event Section -->
+
 <div class="ms-container ms-center ms-dark-grey" style="padding:128px 16px" id="pricing">
   <h3>Events</h3>
+  
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1" class></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2" class></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="images/concert.jpg" alt="BTS" width="700" height="394">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/concert1.jpg" alt="MUN" width="700" height="394">
+      <div class="carousel-caption">
+        ...
+      </div>
+    </div>
+    ...
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+  
+  <!--  
+  
+  
+  
   <p class="ms-large">Choose a Event that fits your needs.</p>
   <div class="ms-row-padding" style="margin-top:64px">
     <div class="ms-third ms-section">
@@ -306,18 +353,18 @@ function checkContactUsForm() {
         <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Buzz</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Fashon Fiest</a>
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Buzz</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Theatre Phnatamoica</a>
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Buzz</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Street Play</a>  
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Buzz</a>  
         </li>
         <li class="ms-padding-16">
         </li>
         <li class="ms-light-grey ms-padding-24">
-          <button class="ms-button ms-black ms-padding-large" action="register.jsp">Register</button>
+          <button class="ms-button ms-black ms-padding-large">Register</button>
         </li>
       </ul>
     </div>
@@ -328,18 +375,18 @@ function checkContactUsForm() {
         <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Hackthon</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">CTF</a>
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Hackthon</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Robo Race</a>
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Hackthon</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Video editing</a>  
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Hackthon</a>  
         </li>
         <li class="ms-padding-16">
         </li>
         <li class="ms-light-grey ms-padding-24">
-          <button class="ms-button ms-black ms-padding-large" action="register.jsp">Register</button>
+          <button class="ms-button ms-black ms-padding-large">Register</button>
         </li>
       </ul>
     </div>
@@ -350,55 +397,33 @@ function checkContactUsForm() {
         <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">MUN</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Stock market</a>
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">MUN</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Start-up</a>
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">MUN</a>
         </li>
         <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">traesure hunt</a>  
+        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">MUN</a>  
         </li>
         <li class="ms-padding-16">
         </li>
         <li class="ms-light-grey ms-padding-24">
-          <button class="ms-button ms-black ms-padding-large" action="register.jsp">Register</button>
+          <button class="ms-button ms-black ms-padding-large">Register</button>
         </li>
       </ul>
     </div>
-    <!-- <div class="ms-third">
-      <ul class="ms-ul ms-white ms-hover-shadow">
-        <li class="ms-red ms-xlarge ms-padding-48">Pro</li>
-        <li class="ms-padding-16"><b>25GB</b> Storage</li>
-        <li class="ms-padding-16"><b>25</b> Emails</li>
-        <li class="ms-padding-16"><b>25</b> Domains</li>
-        <li class="ms-padding-16"><b>Endless</b> Support</li>
-        <li class="ms-padding-16">
-          <h2 class="ms-wide">$ 25</h2>
-          <span class="ms-opacity">per month</span>
-        </li>
-        <li class="ms-light-grey ms-padding-24">
-          <button class="ms-button ms-black ms-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div>
-    <div class="ms-third ms-section">
-      <ul class="ms-ul ms-white ms-hover-shadow">
-        <li class="ms-black ms-xlarge ms-padding-32">Premium</li>
-        <li class="ms-padding-16"><b>50GB</b> Storage</li>
-        <li class="ms-padding-16"><b>50</b> Emails</li>
-        <li class="ms-padding-16"><b>50</b> Domains</li>
-        <li class="ms-padding-16"><b>Endless</b> Support</li>
-        <li class="ms-padding-16">
-          <h2 class="ms-wide">$ 50</h2>
-          <span class="ms-opacity">per month</span>
-        </li>
-        <li class="ms-light-grey ms-padding-24">
-          <button class="ms-button ms-black ms-padding-large">Sign Up</button>
-        </li>
-      </ul>
-    </div> -->
-  </div>
+    
+  </div> 
+  
+  
+  
+  -->
+  
+  
 </div>
+
+
+
 
 <!-- Contact Section -->
 <div class="ms-container ms-light-grey" style="padding:40px 16px" id="contact">
@@ -481,6 +506,6 @@ function ms_close() {
   }  
 
 </script>
-
+<script type="text/javascript" "js/bootstrap.js"></script>
 </body>
 </html>

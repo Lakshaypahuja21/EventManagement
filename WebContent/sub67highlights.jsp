@@ -35,7 +35,7 @@
     <div class="ms-right ms-hide-small">
       <a href="event.jsp#about" class="ms-bar-item ms-button">ABOUT</a>
       <a href="event.jsp#team" class="ms-bar-item ms-button"><i class="fa fa-user"></i> TEAM</a>
-      <a href="event.jsp#pricing" class="ms-bar-item ms-button"><i class="fa fa-music"></i> EVENTS</a>
+      <a href="manastrial.jsp" class="ms-bar-item ms-button"><i class="fa fa-music"></i> EVENTS</a>
       <a href="event.jsp#contact" class="ms-bar-item ms-button"><i class="fa fa-envelope"></i> CONTACT</a>
       <a href="register.jsp" class="ms-bar-item ms-button"><i class="fa fa-plus"></i> REGISTER</a>
         <a href="index.jsp" class="ms-bar-item ms-button"><i class="fa fa-key"></i> Admin</a>

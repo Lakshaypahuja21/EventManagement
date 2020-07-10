@@ -1,3 +1,4 @@
+@charset "ISO-8859-1";
 
 body,h1,h2,h3,h4,h5,h6 
 {
@@ -15,10 +16,9 @@ body, html
 {
   background-position: center;
   background-size: cover;
-  background-image: url(ltbest.jpg);
+  background-image: url("ltbest.jpg");
   min-height: 100%;
 }
-
 .eventimg
 {
  
@@ -49,3 +49,4 @@ textarea {
 	height:130px;
 	width:250px;
 }
+   

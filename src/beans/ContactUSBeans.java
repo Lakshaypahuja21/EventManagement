@@ -4,20 +4,21 @@ import java.util.Date;
 
 public class ContactUSBeans {
 
-	public String id;
+	public Integer id;
 	public String name;
 	public String email;
 	public String subject;
 	public String message;
 	public Integer is_active;
-	public Date entry_date;
+	public String entry_date;
 	
 	
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
+	
 	}
 	public String getName() {
 		return name;
@@ -49,13 +50,12 @@ public class ContactUSBeans {
 	public void setIs_active(Integer is_active) {
 		this.is_active = is_active;
 	}
-	public Date getEntry_date() {
+	public String getEntry_date() {
 		return entry_date;
 	}
-	public void setEntry_date(Date entry_date) {
+	public void setEntry_date(String entry_date) {
 		this.entry_date = entry_date;
 	}
+	}
 	
-	
-	
-}
+

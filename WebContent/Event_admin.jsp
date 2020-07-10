@@ -1,3 +1,5 @@
+<%@page import="action.ContactUsAction"%>
+<%@page import="beans.ContactUSBeans"%>
 <%@page import="beans.RegisterBeansMun"%>
 <%@page import="beans.RegisterBeansBuzz"%>
 <%@page import="beans.RegisterBeans"%>
@@ -259,33 +261,35 @@
 					<div class="row" id = "eventinsert">
 						
 						<div class="col-lg-9" >
-							<form>
+							<form action="AdminEventAction" method="POST">
 					  			<div class="form-group">
 					  				<label for="exampleInputEmail1">Event Name </label>
-					  			    <input type="text" class="form-control" placeholder="Event Name">
+					  			    <input type="text" class="form-control" placeholder="Event Name" name="Ename">
 					  			</div>
 					  			<div class="form-group">
 					  			  	<label for="exampleInputPassword1">Event Description</label>
-					  			  	<textarea class="form-control" rows="5"></textarea>
+					  			  	<textarea class="form-control" rows="5" name="Edesc"></textarea>
 					  			</div>
 					  			<div class="form-group">
 					  			  	<label for="exampleInputFile">Upload image of Event Page</label>
 					  			 	<input type="image" id="exampleInputFile">
 					  			  	<p class="help-block">This image will be displayed <br> in events section of website.</p>
 					  			</div>
-					  			<div class="form-group">
-					  			  	<label for="exampleInputFile">Upload image of Event Sub-Page</label>
-					  			 	<input type="image" id="exampleInputFile">
-					  			  	<p class="help-block">This image will be displayed <br> in separate page for the this event</p>
-					  			</div>
+					  		
 					  			<div class="form-group">
 					  				<label for="exampleInputEmail1">Provide Youtube URL of video</label>
-					  			    <input type="url" class="form-control" placeholder="URL">
+					  			    <input type="url" class="form-control" placeholder="URL" name="Eyurl">
 					  			</div>
 					  			<div class="form-group">
-					  				<label for="exampleInputEmail1">Provide Youtube URL of video</label>
-					  			    <input type="url" class="form-control" placeholder="URL">
+					  				<label for="exampleInputEmail1">Provide INSTA URL</label>
+					  			    <input type="url" class="form-control" placeholder="URL" name="Eiurl">
 					  			</div>
+					  			<p>Choose a subject <select id="etype" name="Etype">
+      								<option value="Techno">Technical</option>
+								      <option value="Cul">Cultural</option>
+								      <option value="Man">Management</option>
+								      <option value="Spo">Sports</option>
+								      </select></p>
 					  			<button  class="btn btn-default" >Submit</button>
 					  		</form>
 					  		
@@ -474,27 +478,41 @@
 
 				<div id="ContactUsData">
 
-					<table class="table table-striped table table-bordered ">
-	  			  		    <tr>
-	  			  		    	<th>Name</th>
-	  			  		    	<th>Phone No.</th>
-	  			  		    	<th>Email Address</th>
-	  			  		    	<th>School/College</th>
-	  			  		    	<th>Subject</th>
-	  			  		    	<th>Query</th>
-	  			  		    	<th></th>
-	  			  		    </tr>
-	  			  		    <tr>
-	  			  		        <td>A</td>
-	  			  		        <td>B</td>
-	  			  		        <td>C</td>
-	  			  		        <td>D</td>
-	  			  		        <td>E</td>
-	  			  		        <td>F</td>	  	
-	  			  		        <td style="color:red"><a>Delete</a></td>		  		        
-	  			  		    </tr>
- 	  			  		   
-	  			  		</table>
+
+
+    
+    
+    
+<table width="100%" border="1">
+<tr>
+<td>ID</td>
+<td> Name</td>
+<td>Email</td>
+<td>Subject</td>
+<td>message</td>
+<td>Entry Date</td>
+</tr>
+<%
+List<ContactUSBeans> contactUsList = new ArrayList<ContactUSBeans>();
+contactUsList = (ArrayList<ContactUSBeans>) request.getSession().getAttribute("contactUsList");
+
+if(contactUsList != null && contactUsList.size()>0) {
+	for(ContactUSBeans contactUSBeans : contactUsList) {
+		%>
+		<tr>
+		<td><%=contactUSBeans.getId()%></td>
+		<td><%=contactUSBeans.getName()%></td>
+		<td><%=contactUSBeans.getEmail()%></td>
+		<td><%=contactUSBeans.getSubject()%></td>
+		<td><%=contactUSBeans.getMessage()%></td>
+		<td><%=contactUSBeans.getEntry_date()%></td>
+		</tr>
+		<%
+	}	
+}
+%>
+</table>
+			
 					
 				</div>
 
@@ -515,18 +533,7 @@
 	  			  		        <td style="color:blue" id="myBTS"><u><a>View</a></u></td>
 	  			  		        
 	  			  		        <td style="color:red"><u><a>Delete</a></u></td>	  			  		         			  		        
-	  			  		    <!-- The Modal -->
-<div id="ModalBTS" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-  
-</div>
-	  	
-	  			  		    </tr>
+		  			  		    </tr>
 	  			  		    <tr>
 	  			  		        <td>2</td>
 	  			  		        <td>MUN</td>
@@ -542,17 +549,7 @@
 	  			  		        <td style="color:blue" id="myBUZZ"><u><a>View</a></u></td>
 	  			  		        <td style="color:red"><u><a>Delete</a></u></td>	  
 	  			  		        
-	  			  		        <!-- The Modal -->
-<div id="ModalBUZZ" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
-  
-</div>			  		         			  		        
-	  			  		    </tr> 	  			  		   
+	  			  		     </tr> 	  			  		   
 	  			  		</table>	
 	  			  		
 	  			  		
@@ -608,8 +605,102 @@ if(registerListMun != null && registerListMun.size()>0) {
   </div>
   
 </div> 
-	  			  		
+	  			     <!-- The Modal of buzz -->
+<div id="ModalBUZZ" class="modal">
 
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+    <table width="100%" border="1">
+<tr>
+<td>ID</td>
+<td>First Name</td>
+<td>Last Name</td>
+<td>Email</td>
+<td>Contact</td>
+<td>College</td>
+<td>Team Size</td>
+<td>Entry Date</td>
+</tr>
+
+<%
+List<RegisterBeansBuzz> registerListBuzz = new ArrayList<RegisterBeansBuzz>();
+registerListBuzz = (ArrayList<RegisterBeansBuzz>) request.getSession().getAttribute("registerListBuzz");
+
+if(registerListBuzz != null && registerListBuzz.size()>0) {
+	for(RegisterBeansBuzz registerBeansBuzz : registerListBuzz) {
+		%>
+		<tr>
+		<td><%=registerBeansBuzz.getId()%></td>
+		<td><%=registerBeansBuzz.getFirstnamebuzz()%></td>
+		<td><%=registerBeansBuzz.getLastnamebuzz()%></td>
+		<td><%=registerBeansBuzz.getEmailbuzz()%></td>
+		<td><%=registerBeansBuzz.getContactbuzz()%></td>
+		<td><%=registerBeansBuzz.getCollegebuzz()%></td>
+		<td><%=registerBeansBuzz.getTeambuzz()%></td>
+		<td><%=registerBeansBuzz.getEntry_date()%></td>
+		</tr>
+		<%
+	}	
+}
+%>
+</table>
+    
+    
+  </div>
+  
+</div>			  		         			  		        
+	  			  		    		
+
+	  			  		    <!-- The Modal of bts -->
+<div id="ModalBTS" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    
+    <table width="100%" border="1">
+<tr>
+<td>ID</td>
+<td>First Name</td>
+<td>Last Name</td>
+<td>Email</td>
+<td>Contact</td>
+<td>College</td>
+<td>Team Size</td>
+<td>Entry Date</td>
+</tr>
+
+<%
+List<RegisterBeans> registerList = new ArrayList<RegisterBeans>();
+registerList = (ArrayList<RegisterBeans>) request.getSession().getAttribute("registerList");
+
+if(registerList != null && registerList.size()>0) {
+	for(RegisterBeans registerBeans : registerList) {
+		%>
+		<tr>
+		<td><%=registerBeans.getId()%></td>
+		<td><%=registerBeans.getFirstnamebts()%></td>
+		<td><%=registerBeans.getLastnamebts()%></td>
+		<td><%=registerBeans.getEmailbts()%></td>
+		<td><%=registerBeans.getContactbts()%></td>
+		<td><%=registerBeans.getCollegebts()%></td>
+		<td><%=registerBeans.getTeambts()%></td>
+		<td><%=registerBeans.getEntry_date()%></td>
+		</tr>
+		<%
+	}	
+}
+%>
+</table>
+    
+    
+    
+  </div>
+  
+</div>
+	  	
 		  					
 				</div>		
 			</div>

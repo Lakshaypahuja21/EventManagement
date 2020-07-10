@@ -74,16 +74,14 @@ function showRegForm() {
     		<a href="#home" class="ms-bar-item ms-button ms-wide">67th Milestone</a>
     		<!-- Right-sided navbar links -->
     		<div class="ms-right ms-hide-small">
-  
-  <a href="#about" onclick="ms_close()" class="ms-bar-item ms-button">ABOUT</a>
-  <a href="#team" onclick="ms_close()" class="ms-bar-item ms-button">TEAM</a>
-  <a href="#events" onclick="ms_close()" class="ms-bar-item ms-button">EVENTS</a>
-  <a href="#contact" onclick="ms_close()" class="ms-bar-item ms-button">CONTACT</a>
-  <a href="register.jsp" onclick="ms_close()" class="ms-bar-item ms-button">REGISTER</a>
-  <a href="index.jsp" onclick="ms_close()" class="ms-bar-item ms-button">Admin</a>
-     			
-    		</div>
-    		
+      <a href="event.jsp#about" class="ms-bar-item ms-button">ABOUT</a>
+      <a href="event.jsp#team" class="ms-bar-item ms-button"><i class="fa fa-user"></i> TEAM</a>
+      <a href="manastrial.jsp" class="ms-bar-item ms-button"><i class="fa fa-music"></i> EVENTS</a>
+      <a href="event.jsp#contact" class="ms-bar-item ms-button"><i class="fa fa-envelope"></i> CONTACT</a>
+      <a href="register.jsp" class="ms-bar-item ms-button"><i class="fa fa-plus"></i> REGISTER</a>
+        <a href="index.jsp" class="ms-bar-item ms-button"><i class="fa fa-key"></i> Admin</a>
+
+    </div>
     		
    
   

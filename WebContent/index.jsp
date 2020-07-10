@@ -171,7 +171,8 @@ label {
                                 </div>
                             </div>
                         </form>
-                        <a href="showRegisterationDetails.jsp">Registration Details</a>
+                        <a href="RegistrationDetailsAction">Registration Details</a>
+                        <a href="ContactDetailsAction">Contact details</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-2"></div>

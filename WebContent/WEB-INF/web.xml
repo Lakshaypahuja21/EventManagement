@@ -114,4 +114,24 @@
     <servlet-name>LoginAction</servlet-name>
     <url-pattern>/LoginAction</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ContactDetailsAction</display-name>
+    <servlet-name>ContactDetailsAction</servlet-name>
+    <servlet-class>action.ContactDetailsAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ContactDetailsAction</servlet-name>
+    <url-pattern>/ContactDetailsAction</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminEventAction</display-name>
+    <servlet-name>AdminEventAction</servlet-name>
+    <servlet-class>action.AdminEventAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminEventAction</servlet-name>
+    <url-pattern>/AdminEventAction</url-pattern>
+  </servlet-mapping>
 </web-app>
