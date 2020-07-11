@@ -134,4 +134,14 @@
     <servlet-name>AdminEventAction</servlet-name>
     <url-pattern>/AdminEventAction</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AdminEventDisplayAction</display-name>
+    <servlet-name>AdminEventDisplayAction</servlet-name>
+    <servlet-class>action.AdminEventDisplayAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminEventDisplayAction</servlet-name>
+    <url-pattern>/AdminEventDisplayAction</url-pattern>
+  </servlet-mapping>
 </web-app>

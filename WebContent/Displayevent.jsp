@@ -1,3 +1,5 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="beans.AdminEventBeans"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -90,32 +92,35 @@
 
 
 
-<%
-List<AdminEventBeans> adminEventList = new ArrayList<AdminEventBeans>();
-adminEventList = (ArrayList<AdminEventBeans>) request.getSession().getAttribute("adminEventList");
-int val=0;
 
-if(adminEventList != null && adminEventList.size()>0) {
+	
+	
+		<%
+			List<AdminEventBeans> adminEventList = new ArrayList<AdminEventBeans>();
+			adminEventList = (ArrayList<AdminEventBeans>) request.getSession().getAttribute("admineventlist");
+			int val=1;
+
+			if(adminEventList != null && adminEventList.size()>0) {
 	for(AdminEventBeans adminEventBeans : adminEventList) {
-%>
-		<div class="<% adminEventBeans.getType %>">
+		%>
+		<div class="<%=adminEventBeans.getEtype()%>">
 		<div 
 		<% if(val == 1){val = 0;%>class="ms-container ms-light-grey"<% }
-		else{val = 0;%> class="ms-container" <% }%>
+		else{val = 1;%> class="ms-container" <% }%>
 	 style="padding:128px 16px; margin-top:80px;">
   <div class="ms-row-padding">
     <div class="ms-col m9">
-     <H3> <%adminEventBeans.getName %></H3>
+     <H3> <%=adminEventBeans.getEname()%></H3>
      <br>
-     <p><% adminEventBeans.getDescription %></p>
+     <p><%=adminEventBeans.getEdesc()%></p>
     </div>
     <div class="ms-col m3">
       
       <div class="container">
   	  	<img src="x.png" alt="Avatar" class="image" style="width:100%">
   		<div class="middle">
-    	<a href="<% adminEventBeans.getEyurl %>"><i class="fa fa-youtube-play fa-2" aria-hidden="true"></i></a>
-    	<a href="<% adminEventBeans.getEiurl %>"><i class="fa fa-instagram fa-2" aria-hidden="true"></i></a>
+    	<a href="<%=adminEventBeans.getEyurl()%>"><i class="fa fa-youtube-play fa-2" aria-hidden="true"></i></a>
+    	<a href="<%=adminEventBeans.getEiurl()%>"><i class="fa fa-instagram fa-2" aria-hidden="true"></i></a>
   	  
     	</div>
 </div>
@@ -124,3 +129,53 @@ if(adminEventList != null && adminEventList.size()>0) {
   </div>
 </div>
 </div>
+	<% }
+
+	}
+%>	
+
+
+<!-- word content -->
+
+
+
+
+<!-- Footer -->
+<footer class="ms-center ms-black ms-padding-64">
+  <a href="#home" class="ms-button ms-light-grey"><i class="fa fa-arrow-up ms-margin-right"></i>To the top</a>
+  <div class="ms-xlarge ms-section">
+    <i class="fa fa-facebook-official ms-hover-opacity"></i>
+    <i class="fa fa-instagram ms-hover-opacity"></i>
+  </div>
+  <p>67 Milestone</p>
+</footer>
+ 
+<script>
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+function ms_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+  } else {
+    mySidebar.style.display = 'block';
+  }
+}
+// Close the sidebar with the close button
+function ms_close() {
+    mySidebar.style.display = "none";
+}
+ function animate_no()
+ {
+    $(".ms-quarter").counterUp({delay:10,time:1000})
+  }  
+</script>
+
+</body>
+</html>
