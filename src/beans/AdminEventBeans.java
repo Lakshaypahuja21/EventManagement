@@ -10,6 +10,13 @@ public class AdminEventBeans {
 	public String eyurl;
 	public String eiurl;
 	public String etype;
+	public String imname;
+	
+	public String esubject;
+	public String created_date;
+	public String is_active;
+	public String no_of_seat;
+	public String aval_seat;
 	
 	
 	
@@ -49,6 +56,42 @@ public class AdminEventBeans {
 	}
 	public void setEiurl(String eiurl) {
 		this.eiurl = eiurl;
+	}
+	public String getImname() {
+		return imname;
+	}
+	public void setImname(String imname) {
+		this.imname = imname;
+	}
+	public String getEsubject() {
+		return esubject;
+	}
+	public void setEsubject(String esubject) {
+		this.esubject = esubject;
+	}
+	public String getCreated_date() {
+		return created_date;
+	}
+	public void setCreated_date(String created_date) {
+		this.created_date = created_date;
+	}
+	public String getIs_active() {
+		return is_active;
+	}
+	public void setIs_active(String is_active) {
+		this.is_active = is_active;
+	}
+	public String getNo_of_seat() {
+		return no_of_seat;
+	}
+	public void setNo_of_seat(String no_of_seat) {
+		this.no_of_seat = no_of_seat;
+	}
+	public String getAval_seat() {
+		return aval_seat;
+	}
+	public void setAval_seat(String aval_seat) {
+		this.aval_seat = aval_seat;
 	}
 	
 

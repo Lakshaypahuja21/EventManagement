@@ -5,168 +5,146 @@
 <%@page import="beans.RegisterBeans"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>AdminSite</title>
-</head>
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Admin Panel</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-.sidenav {
-  height: 100%;
-  width: 160px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4 pt-5">
+		  		<h1><a href="index.html" class="logo">67th MS</a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#">Header Image Insert & View</a>
+                </li>
+                <li>
+                    <a href="#">Home Images Insert & View</a>
+                </li>
+                <li>
+                    <a href="#">>News Insert & View</a>
+                </li>
+	            </ul>
+	          </li>
+	          <li>
+	              <a href="#">About</a>
+	          </li>
+	          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Highlights</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="#">Highlights Insert</a>
+                </li>
+                <li>
+                    <a href="#">Highlights View</a>
+                </li>
+              </ul>
+	          </li>
+	          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="#">Insert Event</a>
+                </li>
+                <li>
+                    <a href="#">View & Modify</a>
+                </li>
+              </ul>
+	          </li>
+	          <li>
+              <a href="RegistrationDetailsAction">Registration Details</a>
+	          </li>
+	          <li>
+              <a href="ContactDetailsAction">Contact Details</a>
+	          </li>
+	        </ul>
 
-.sidenav a {
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
+	        <div class="mb-5">
+						<h3 class="h6">Subscribe for newsletter</h3>
+						<form action="#" class="colorlib-subscribe-form">
+	            <div class="form-group d-flex">
+	            	<div class="icon"><span class="icon-paper-plane"></span></div>
+	              <input type="text" class="form-control" placeholder="Enter Email Address">
+	            </div>
+	          </form>
+					</div>
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
+	        <div class="footer">
+	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
+	        </div>
 
-.main {
-  margin-left: 160px; /* Same as the width of the sidenav */
-  font-size: 14px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-}
+	      </div>
+    	</nav>
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
 
-.dropbtn {
-  background-color: #4CAF50;
-  width: 100%;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
+        <h2 class="mb-4">Welcome <%=request.getSession().getAttribute("username")%></h2>
+        <p>
+	  	<table width="100%" border="1">
+		<tr style="background-color: #CA6F1E; color: #ffffff; font-weight: bold; font-size: 20px;; height: 35px;">	
+		<td align="center">Contact Us Details</td>
+		</tr>
+		</table>
+		<br/>
+		<hr/>
+		<br/>
+	  
+		<table width="100%" border="1">
+		<tr style="background-color: blue; color: #ffffff; font-weight: bold; height: 35px;">	
+		<td>ID</td>
+		<td> Name</td>
+		<td>Email</td>
+		<td>Subject</td>
+		<td>message</td>
+		<td>Entry Date</td>
+		</tr>
+		<%
+		List<ContactUSBeans> contactUsList = new ArrayList<ContactUSBeans>();
+		contactUsList = (ArrayList<ContactUSBeans>) request.getSession().getAttribute("contactUsList");
+		
+		if(contactUsList != null && contactUsList.size()>0) {
+			for(ContactUSBeans contactUSBeans : contactUsList) {
+				%>
+				<tr>
+				<td><%=contactUSBeans.getId()%></td>
+				<td><%=contactUSBeans.getName()%></td>
+				<td><%=contactUSBeans.getEmail()%></td>
+				<td><%=contactUSBeans.getSubject()%></td>
+				<td><%=contactUSBeans.getMessage()%></td>
+				<td><%=contactUSBeans.getEntry_date()%></td>
+				</tr>
+				<%
+			}	
+		}
+		%>
+		</table>
+	  
+	  </p>
+      </div>
+		</div>
 
-}
-
-.dropbtn2 {
-  background-color: #439546;
-  width: 100%;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-
-}
-
-.dropdown {
-
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-font-size: 14px;
-  color: black;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-</style>
-<body>
-<div class="sidenav">
-  <div class="dropdown">
-  <button class="dropbtn">Home Page</button>
-  <div class="dropdown-content">
-  	<a href="#">Header Image Insert & View </a><hr/>					    	
-	<a href="#">Home Images Insert & View </a><hr/>
-	<a href="#">News Insert & View</a>
-  </div>
-</div>
-<div class="dropdown">
-  <button class="dropbtn2">Highlights</button>
-  <div class="dropdown-content">
-  	<a href="#">Highlights Insert </a> <hr/>
-	<a href="#">Highlights View </a>
-  </div>
-</div>
-<div class="dropdown">
-  <button class="dropbtn">Events</button>
-  <div class="dropdown-content">
-  	<a href="#">Insert Event</a> <hr/>
-	<a href="#">View & Modify</a>
-  </div>
-</div>
-<a href="ContactDetailsAction"><button class="dropbtn2">Contact Us</button></a>
-<a href="RegistrationDetailsAction"><button class="dropbtn">Registration</button></a>
-</div>
-
-<div class="main">
-  <h2>Welcome <%=request.getSession().getAttribute("username")%></h2>
-  <p>
-  	<table width="100%" border="1">
-	<tr style="background-color: #CA6F1E; color: #ffffff; font-weight: bold; font-size: 20px;; height: 35px;">	
-	<td align="center">Contact Us Details</td>
-	</tr>
-	</table>
-	<br/>
-	<hr/>
-	<br/>
-  
-	<table width="100%" border="1">
-	<tr style="background-color: blue; color: #ffffff; font-weight: bold; height: 35px;">	
-	<td>ID</td>
-	<td> Name</td>
-	<td>Email</td>
-	<td>Subject</td>
-	<td>message</td>
-	<td>Entry Date</td>
-	</tr>
-	<%
-	List<ContactUSBeans> contactUsList = new ArrayList<ContactUSBeans>();
-	contactUsList = (ArrayList<ContactUSBeans>) request.getSession().getAttribute("contactUsList");
-	
-	if(contactUsList != null && contactUsList.size()>0) {
-		for(ContactUSBeans contactUSBeans : contactUsList) {
-			%>
-			<tr>
-			<td><%=contactUSBeans.getId()%></td>
-			<td><%=contactUSBeans.getName()%></td>
-			<td><%=contactUSBeans.getEmail()%></td>
-			<td><%=contactUSBeans.getSubject()%></td>
-			<td><%=contactUSBeans.getMessage()%></td>
-			<td><%=contactUSBeans.getEntry_date()%></td>
-			</tr>
-			<%
-		}	
-	}
-	%>
-	</table>
-  
-  </p>
-</div>
-
-</body>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

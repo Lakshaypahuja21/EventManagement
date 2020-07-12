@@ -48,7 +48,7 @@ public class AdminEventDisplayAction extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");  
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement","root","root");  
 			
-			PreparedStatement stmt = con.prepareStatement("select Eid, Ename,Edesc,Eyurl,Eiurl,Etype from eventadmin");
+			PreparedStatement stmt = con.prepareStatement("select Eid, Ename,Edesc,Eyurl,Eiurl,Etype,Imname,no_of_seat,subject,created_date,avl_seat from eventadmin where is_active='1'");
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
 				AdminEventBeans beans = new AdminEventBeans();
@@ -61,6 +61,11 @@ public class AdminEventDisplayAction extends HttpServlet {
 				beans.setEyurl(rs.getString(4));
 				beans.setEiurl(rs.getString(5));
 				beans.setEtype(rs.getString(6));
+				beans.setImname(rs.getString(7));
+				beans.setNo_of_seat(rs.getString(8));
+				beans.setEsubject(rs.getString(9));
+				beans.setCreated_date(rs.getString(10));
+				beans.setAval_seat(rs.getString(11));
 				
 				adminEventList.add(beans);
 			}			

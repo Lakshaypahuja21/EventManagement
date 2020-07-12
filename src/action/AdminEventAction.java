@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -43,10 +45,11 @@ public class AdminEventAction extends HttpServlet {
 		
 		String ename = request.getParameter("Ename");
 		String edesc = request.getParameter("Edesc");
-		//String main_page_image = request.getParameter("");
+		String imname = request.getParameter("ImageName");
 		String eyurl= request.getParameter("Eyurl");
 		String eiurl= request.getParameter("Eiurl");
 		String etype= request.getParameter("Etype");
+		String noOfSeat = request.getParameter("NoOfSeat");
 		
 		int error_status = 0;
 		AdminEventBeans adminEventBeans = new AdminEventBeans();
@@ -56,6 +59,8 @@ public class AdminEventAction extends HttpServlet {
 		adminEventBeans.setEyurl(eyurl);
 		adminEventBeans.setEiurl(eiurl);
 		adminEventBeans.setEtype(etype);
+		adminEventBeans.setImname(imname);
+		adminEventBeans.setNo_of_seat(noOfSeat);
 		
 		System.out.println(adminEventBeans.getEname());
 		System.out.println(adminEventBeans.getEdesc());
@@ -64,18 +69,28 @@ public class AdminEventAction extends HttpServlet {
 		System.out.println(adminEventBeans.getEyurl());
 		System.out.println(adminEventBeans.getEiurl());
 		System.out.println(adminEventBeans.getEtype());
+		
+		SimpleDateFormat sf = new SimpleDateFormat("dd-MM-YYYY");
 		if(error_status == 0) {
 			
 			try{  
 				Class.forName("com.mysql.jdbc.Driver");  
 				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement?autoReconnect=true&useSSL=false","root","root");  
 				
-				PreparedStatement stmt = con.prepareStatement("insert into eventadmin(Ename,Edesc,Eyurl,Eiurl,Etype) values(?,?,?,?,?)");
+				PreparedStatement stmt = con.prepareStatement("insert into eventadmin(Ename,Edesc,Eyurl,Eiurl,Etype,Imname,no_of_seat,subject,created_date,is_active,avl_seat) values(?,?,?,?,?,?,?,?,?,?,?)");
 				stmt.setString(1, adminEventBeans.getEname());
 				stmt.setString(2, adminEventBeans.getEdesc());
 				stmt.setString(3, adminEventBeans.getEyurl());
 				stmt.setString(4, adminEventBeans.getEiurl());
 				stmt.setString(5, adminEventBeans.getEtype());
+				stmt.setString(6, adminEventBeans.getImname());
+				
+				stmt.setString(7, adminEventBeans.getNo_of_seat());
+				stmt.setString(8, adminEventBeans.getEsubject());
+				stmt.setString(9, sf.format(new Date()));
+				stmt.setString(10, "1");
+				stmt.setString(11, adminEventBeans.getNo_of_seat());
+				
 				
 				int  i = stmt.executeUpdate();  
 				System.out.println(i+" records inserted"); 
@@ -83,11 +98,12 @@ public class AdminEventAction extends HttpServlet {
 				con.close();  
 			} catch(Exception e) { 
 				e.printStackTrace();
+				request.setAttribute("error_msg", "Somthing Went Wrong!! Unable to save data.");
 			}  
 		
 		
-		request.setAttribute("error_msg", "update done");
-		request.getRequestDispatcher("/Event_admin.jsp").forward(request, response);
+		request.setAttribute("success_msg", "Event Details Save Successfully");
+		request.getRequestDispatcher("/EventDetails.jsp").forward(request, response);
 		}
 	}
 }

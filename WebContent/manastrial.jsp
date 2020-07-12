@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="beans.AdminEventBeans"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -85,64 +88,52 @@
   </div>
 </div>
 
-
-<div class="ms-container ms-light-grey"  style="padding:64px 16px; margin-top:80px;">
-  <div class="ms-row-padding">
-    <div class="ms-col m7">
-     <H3> BTS </H3>
-     <br>
-     <p>   Hip hop or hip-hop is a culture and art movement that was created by African Americans,<br>
-      Latino Americans and Caribbean Americans in the Bronx, New York City. The origin of the name <br>
-      is often disputed. It is also argued as to whether hip hop started in the South or West Bronx.<br>
-      While the term hip hop is often used to refer exclusively to hip hop music (including rap),<br>
-      hip hop is characterized by nine elements, of which only four are considered essential to <br>
-      understanding hip hop musically. Afrika Bambaataa of the hip hop collective Zulu Nation<br> 
-      outlined these main pillars of hip hop culture  </p>
-      
-    </div>
-    <div class="ms-col m5">
-      
-      <div class="container">
-  	  	<img src="images/pb67.jpeg" alt="Avatar" class="image" style="width:650px ; height:384px;">
-  		<div style=" position: absolute;  bottom: 192px;   left: 325px;">
-    	<a href="https://www.youtube.com/user/CodeBabes"><i class="fa fa-youtube-play " aria-hidden="true"></i></a>
-    	<a href="https://www.instagram.com/manasyadav1070/?hl=en"><i class="fa fa-instagram " aria-hidden="true"></i></a>
-  	  </div>
-</div>
-      
-    </div>
-    
-  </div>
-</div>
-
-<div class="ms-container "  style="padding-top:64px;padding-bottom:64px; padding-left: 16px;padding-right:16px margin-top:80px;">
-  <div class="ms-row-padding">
-    <div class="ms-col m7">
-     <H3> MUN </H3>
-     <br>
-     <p>Model UN is a popular activity for those interested in learning more about how the UN operates. <br>
-     Hundreds of thousands of students worldwide take part every year at all educational levels. Many of<br>
-      today’s leaders in law, government, business and the arts – including at the UN itself – participated<br> 
-      in Model UN as student. <br>
-
-      The United Nations Model UN Programme aims to build and maintain strong links between the UN <br>and Model UN
-      participants across the globe.</p>
-    </div>
-    <div class="ms-col m5">
-      
-      <div class="container">
-  	  	<img src="images/munimg.jpeg" alt="Avatar" class="image"  style="width:650px; height:384px;">
-  		<div style=" position: absolute;  bottom: 192px;   left: 325px;">
-    	<a href="https://www.youtube.com/user/CodeBabes"><i class="fa fa-youtube-play " aria-hidden="true"></i></a>
-    	<a href="https://www.instagram.com/manasyadav1070/?hl=en"><i class="fa fa-instagram " aria-hidden="true"></i></a>
-  	  </div>
-</div>
-      
-    </div>
-  </div>
-</div>
-
-
+<% 
+List<AdminEventBeans> adminEventList = new ArrayList<AdminEventBeans>();
+adminEventList = (ArrayList<AdminEventBeans>)request.getSession().getAttribute("admineventlist");
+int i = 0;
+if(adminEventList != null && adminEventList.size()>0) {
+	for(AdminEventBeans beans : adminEventList) {
+		%>
+		<%if(i%2==0) {%>
+		<div class="ms-container ms-light-grey"  style="padding:64px 16px; margin-top:80px;">
+		<%} else {%>
+		<div class="ms-container"  style="padding-top:64px;padding-bottom:64px; padding-left: 16px;padding-right:16px margin-top:80px;">
+		<%}%>
+  			<div class="ms-row-padding">
+   				<div class="ms-col m7">
+				     <H3><%=beans.getEname()%></H3>
+				     <br>
+				     <table width="100%">
+				     <tr style="background: #866ec7; color: #fff; height: 50px; font-size: 18px;">
+				     <td width="5%"></td>
+				     <td width="30%">Event Date: <b>23-07-2020</b></td>
+				     <td width="30%">No of Seats : <b><%=beans.getNo_of_seat() %></b></td>
+				     <td width="30%">Available Seats : <b><%=beans.getAval_seat() %></b></td>
+				     <td width="5%"></td>
+				     </tr>
+				     </table>
+				     <br/>
+				     <p><%=beans.getEdesc() %></p>
+				     <br/>
+				     <div>
+    					<a href="<%=beans.getEyurl()%>" target="_blank"><img src="images/youtubelogo.png" width="70px" height="50px"></a>
+    					&nbsp;&nbsp;&nbsp;
+    					<a href="<%=beans.getEiurl()%>" target="_blank"><img src="images/instagramlogo.png" width="50px" height="50px"></a>
+  	  				 </div>
+    			</div>
+    			<div class="ms-col m5">
+ 					<div class="container">
+  	  					<img src="images/<%=beans.getImname()%>" alt="Avatar" class="image" style="width:650px ; height:384px;">
+  					</div>
+      			</div>
+    		</div>
+		</div>		
+		<%
+		i++;
+	}	
+}
+%>
 
 
 

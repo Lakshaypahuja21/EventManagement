@@ -55,7 +55,7 @@ function checkContactUsForm() {
     <div class="ms-right ms-hide-small">
       <a href="#about" class="ms-bar-item ms-button">ABOUT</a>
       <a href="#team" class="ms-bar-item ms-button"><i class="fa fa-address-book"></i> TEAM</a>
-      <a href="manastrial.jsp" class="ms-bar-item ms-button"><i class="fa fa-music"></i> EVENTS</a>
+      <a href="showEventsDetails" class="ms-bar-item ms-button"><i class="fa fa-music"></i> EVENTS</a>
       <a href="#contact" class="ms-bar-item ms-button"><i class="fa fa-envelope"></i> CONTACT</a>
       <a href="register.jsp" class="ms-bar-item ms-button"><i class="fa fa-plus"></i> REGISTER</a>
       <a href="index.jsp" class="ms-bar-item ms-button"><i class="fa fa-key"></i> Admin</a>

@@ -199,14 +199,14 @@
 
 							<h3>Add Highlight</h3>
 
-							<form action="/action_page.php">
+							<form action="AdminHighlightAction" method="post">
 								<label> Heading </label>
-								<textarea name="message" rows="2" cols="60" placeholder="Heading">
+								<textarea name="Head" rows="2" cols="60" placeholder="Heading">
 								</textarea>
 								<br><br>
 
 								<label>Description</label>
-								<textarea name="message" rows="2" cols="60" placeholder="Description">
+								<textarea name="Desc" rows="2" cols="60" placeholder="Description">
 							    </textarea>
 							    <br><br>
 
@@ -216,10 +216,10 @@
   								
   								
   								<label for="exampleInputEmail1">Provide Youtube URL of video</label>
-					  	    	<input type="url" class="form-control" placeholder="Youtube URL">
+					  	    	<input type="Hurl1" class="form-control" placeholder="Youtube URL">
 
 					  			<label for="exampleInputEmail1">Provide Youtube URL of video</label>
-					  	    	<input type="url" class="form-control" placeholder="URL">
+					  	    	<input type="Hurl2" class="form-control" placeholder="URL">
 
 					  	    	<button type="submit" class="btn btn-default">Submit</button>
 
