@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootmin.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="stylesheets/Event_admin.css">
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/style.css">
@@ -27,7 +32,7 @@
 	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="#">Header Image Insert & View</a>
+                    <a href="headerImages.jsp">Header Image Insert & View</a>
                 </li>
                 <li>
                     <a href="#">Home Images Insert & View</a>
@@ -37,10 +42,11 @@
                 </li>
 	            </ul>
 	          </li>
+	         
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Highlights</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
-               <li>
+                <li>
                     <a href="highlightsinsert.jsp">Highlights Insert</a>
                 </li>
                 <li>
@@ -49,13 +55,13 @@
               </ul>
 	          </li>
 	          <li>
-              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
-              <ul class="collapse list-unstyled" id="pageSubmenu">
+              <a href="#eventsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
+              <ul class="collapse list-unstyled" id="eventsSubmenu">
                 <li>
-                    <a href="#">Insert Event</a>
+                    <a href="EventDetails.jsp">Insert Event</a>
                 </li>
                 <li>
-                    <a href="#">View & Modify</a>
+                    <a href="AdminEventDisplayAction">View & Modify</a>
                 </li>
               </ul>
 	          </li>
@@ -86,8 +92,7 @@
 
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
-
-        <table width="100%">
+      <table width="100%">
         <tr>
         <td width="50%"><h2 class="mb-4">Welcome <%=request.getSession().getAttribute("username")%></h2></td>
         <td width="50%" valign="middle" align="right"><a href="LogoutAction"><img src="images/logout.png" width="50px" height="50px"></a></td>
@@ -95,44 +100,52 @@
         </table>        
         <hr/>
         
+
+       
         <p>
-        	<%String success_msg = (String)request.getAttribute("success_msg");
-	          if(success_msg != null && success_msg.length()>0) {
-	        	%><div style="font-size: 14px; font-weight: bold; color: green;" align="center"><%=success_msg%></div><%  
-	          }
-	          String error_msg = (String)request.getAttribute("error_msg");
-	          if(error_msg != null && error_msg.length()>0) {
-	        	%><div style="font-size: 14px; font-weight: bold; color: maroon;" align="center"><%=error_msg%></div><%  
-	          }
-	        %>
-        <p>
-        	<div class="row" id = "headerimage">
-				<div class = "col-lg-3" >
-					<h3>Choose image</h3>
-						<form action="/action_page.php">
-				  			<label for="myfile">Select a file:</label><br><br>
-							<input type="file" id="myfile" name="myfile"><br><br>
-							<input type="submit">
-						</form>
-				</div>
-  				<div class = "col-lg-6" >
-				<h3>Image Database</h3>
-					<table class="table table-striped table table-bordered">
-					<tr>
-						<th>Image</th>
-						<th></th>
-					</tr>
-					<tr>
-						<td>.png</td>
-						<td style="color:red"><a><u>Delete</u></a></td>
-					</tr>
-				</table>
-			</div>
+        <%String success_msg = (String)request.getAttribute("success_msg");
+          if(success_msg != null && success_msg.length()>0) {
+        	%><div style="font-size: 14px; font-weight: bold; color: green;" align="center"><%=success_msg%></div><%  
+          }
+          String error_msg = (String)request.getAttribute("error_msg");
+          if(error_msg != null && error_msg.length()>0) {
+        	%><div style="font-size: 14px; font-weight: bold; color: maroon;" align="center"><%=error_msg%></div><%  
+          }
+        %>	        
         
-        
-        </p>
-      </div>
-		</div>
+
+<!-- Highlightpage ............
+                        -->	
+
+				
+
+
+  						<div class="row" id="highlightsview"> 						
+
+						<table class="table table-striped table table-bordered ">
+	  			  		    <tr>
+	  			  		    	<th>Heading </th>
+	  			  		    	<th>Description</th>
+	  			  		    	<th>Images</th>
+	  			  		    	<th>Youtube URL 1</th>
+	  			  		    	<th>Youtube URL 2</th>
+	  			  		    	<th></th>
+	  			  		    </tr>
+	  			  		    <tr>
+	  			  		        <td>A</td>
+	  			  		        <td>B</td>
+	  			  		        <td>C</td>
+	  			  		        <td>D</td>
+	  			  		        <td>E</td>
+	  			  		        <td style="color:red"><a><u> Delete </u></a><td>	  			  		        
+	  			  		    </tr>
+ 	  			  		   
+	  			  		</table>
+	  			  		</div>	
+	  			  	</div>
+	  			  </div>
+	  			  	
+                   
 
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>

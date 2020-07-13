@@ -38,17 +38,15 @@
                 </li>
 	            </ul>
 	          </li>
-	          <li>
-	              <a href="#">About</a>
-	          </li>
+	          
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Highlights</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
-                    <a href="#">Highlights Insert</a>
+                    <a href="highlightsinsert.jsp">Highlights Insert</a>
                 </li>
                 <li>
-                    <a href="#">Highlights View</a>
+                    <a href="highlightsview.jsp">Highlights View</a>
                 </li>
               </ul>
 	          </li>

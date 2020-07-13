@@ -37,17 +37,15 @@
                 </li>
 	            </ul>
 	          </li>
-	          <li>
-	              <a href="#">About</a>
-	          </li>
+	         
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Highlights</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
-                    <a href="#">Highlights Insert</a>
+                    <a href="highlightsinsert.jsp">Highlights Insert</a>
                 </li>
                 <li>
-                    <a href="#">Highlights View</a>
+                    <a href="highlightsview.jsp">Highlights View</a>
                 </li>
               </ul>
 	          </li>
@@ -89,6 +87,14 @@
 
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
+      <table width="100%">
+        <tr>
+        <td width="50%"><h2 class="mb-4">Welcome <%=request.getSession().getAttribute("username")%></h2></td>
+        <td width="50%" valign="middle" align="right"><a href="LogoutAction"><img src="images/logout.png" width="50px" height="50px"></a></td>
+        </tr>
+        </table>        
+        <hr/>
+        
 
         <h2 class="mb-4">Welcome <%=request.getSession().getAttribute("username")%></h2>
         <p>
