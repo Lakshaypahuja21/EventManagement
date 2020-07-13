@@ -95,14 +95,14 @@ public class AdminEventAction extends HttpServlet {
 				int  i = stmt.executeUpdate();  
 				System.out.println(i+" records inserted"); 
 				
-				con.close();  
+				con.close(); 
+				request.setAttribute("success_msg", "Event Details Save Successfully");
+				
 			} catch(Exception e) { 
 				e.printStackTrace();
 				request.setAttribute("error_msg", "Somthing Went Wrong!! Unable to save data.");
-			}  
+			} 		
 		
-		
-		request.setAttribute("success_msg", "Event Details Save Successfully");
 		request.getRequestDispatcher("/EventDetails.jsp").forward(request, response);
 		}
 	}

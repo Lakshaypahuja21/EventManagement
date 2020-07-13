@@ -34,10 +34,10 @@
 	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="#">Header Image Insert & View</a>
+                    <a href="headerImages.jsp">Header Image Insert & View</a>
                 </li>
                 <li>
-                    <a href="#">Home Images Insert & View</a>
+                    <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
                     <a href="#">>News Insert & View</a>
@@ -48,11 +48,11 @@
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Highlights</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li>
-                    <a href="#">Highlights Insert</a>
+              <li>
+                    <a href="highlightsinsert.jsp">Highlights Insert</a>
                 </li>
                 <li>
-                    <a href="#">Highlights View</a>
+                    <a href="highlightsview.jsp">Highlights View</a>
                 </li>
               </ul>
 	          </li>
@@ -60,10 +60,10 @@
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
-                    <a href="#">Insert Event</a>
+                    <a href="EventDetails.jsp">Insert Event</a>
                 </li>
                 <li>
-                    <a href="#">View & Modify</a>
+                    <a href="AdminEventDisplayAction">View & Modify</a>
                 </li>
               </ul>
 	          </li>

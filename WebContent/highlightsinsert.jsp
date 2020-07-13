@@ -35,7 +35,7 @@
                     <a href="headerImages.jsp">Header Image Insert & View</a>
                 </li>
                 <li>
-                    <a href="#">Home Images Insert & View</a>
+                    <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
                     <a href="#">>News Insert & View</a>
@@ -114,36 +114,45 @@
         %>	        
         
 
-<!-- Highlightpage ............
-                        -->	
+				<h3>Add Highlight</h3>
 
-				
+							<form action="AdminHighlightAction" method="post">
+								<label for="heading">Heading</label>
+					  			 	<input type="text" class="form-control" placeholder="Heading" name="Head">
+								
+							
+								<label for="desc">Description</label>
+					  			 	<input type="text" class="form-control" placeholder="Description" name="Desc">
+								
+								
+							  
+									
+									<label for="exampleInputFile">Upload Image Name</label>
+					  			 	<input type="text" class="form-control" placeholder="Image Name" name="Himage1">	
+					  			 	 
+					  			 	 <label for="exampleInputFile">Upload 2nd Image Name</label>
+					  			 	<input type="text" class="form-control" placeholder="Image Name" name="Himage2">	
+							    
+  								
+  								
+  								<label for="exampleInputEmail1">Provide Youtube URL of video</label>
+					  	    	<input type="text" name="Hurl1" class="form-control" placeholder="Youtube URL">
 
+					  			<label for="exampleInputEmail1">Provide Youtube URL of video</label>
+					  	    	<input type="text" name="Hurl2" class="form-control" placeholder="URL">
+								
+								<br/>
+								<br/>
+					  	    	<div align="center">
+					  			<input type="submit" name="Submit" value="Submit" class="button button2" style="color: #000000;">
+					  			&nbsp;&nbsp; 
+					  			<input type="button" name="Reset" value="Reset" class="button button1" style="color: #000000;">
+					  			</div>
 
-  						<div class="row" id="highlightsview"> 						
+							</form>
 
-						<table class="table table-striped table table-bordered ">
-	  			  		    <tr>
-	  			  		    	<th>Heading </th>
-	  			  		    	<th>Description</th>
-	  			  		    	<th>Images</th>
-	  			  		    	<th>Youtube URL 1</th>
-	  			  		    	<th>Youtube URL 2</th>
-	  			  		    	<th></th>
-	  			  		    </tr>
-	  			  		    <tr>
-	  			  		        <td>A</td>
-	  			  		        <td>B</td>
-	  			  		        <td>C</td>
-	  			  		        <td>D</td>
-	  			  		        <td>E</td>
-	  			  		        <td style="color:red"><a><u> Delete </u></a><td>	  			  		        
-	  			  		    </tr>
- 	  			  		   
-	  			  		</table>
-	  			  		</div>	
+  						</div>
 	  			  	</div>
-	  			  </div>
 	  			  	
                    
 
@@ -153,3 +162,54 @@
     <script src="js/main.js"></script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					

@@ -33,15 +33,14 @@
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
-                    <a href="#">>News Insert & View</a>
+                    <a href="#">News Insert & View</a>
                 </li>
 	            </ul>
 	          </li>
-	         
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Highlights</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li>
+               <li>
                     <a href="highlightsinsert.jsp">Highlights Insert</a>
                 </li>
                 <li>
@@ -50,8 +49,8 @@
               </ul>
 	          </li>
 	          <li>
-              <a href="#eventsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
-              <ul class="collapse list-unstyled" id="eventsSubmenu">
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
                     <a href="EventDetails.jsp">Insert Event</a>
                 </li>
@@ -87,7 +86,8 @@
 
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
-      <table width="100%">
+
+        <table width="100%">
         <tr>
         <td width="50%"><h2 class="mb-4">Welcome <%=request.getSession().getAttribute("username")%></h2></td>
         <td width="50%" valign="middle" align="right"><a href="LogoutAction"><img src="images/logout.png" width="50px" height="50px"></a></td>
@@ -95,73 +95,64 @@
         </table>        
         <hr/>
         
-
-        <h2 class="mb-4">Welcome <%=request.getSession().getAttribute("username")%></h2>
         <p>
-        <%String success_msg = (String)request.getAttribute("success_msg");
-          if(success_msg != null && success_msg.length()>0) {
-        	%><div style="font-size: 14px; font-weight: bold; color: green;" align="center"><%=success_msg%></div><%  
-          }
-          String error_msg = (String)request.getAttribute("error_msg");
-          if(error_msg != null && error_msg.length()>0) {
-        	%><div style="font-size: 14px; font-weight: bold; color: maroon;" align="center"><%=error_msg%></div><%  
-          }
-        %>	        
+        	<%String success_msg = (String)request.getAttribute("success_msg");
+	          if(success_msg != null && success_msg.length()>0) {
+	        	%><div style="font-size: 14px; font-weight: bold; color: green;" align="center"><%=success_msg%></div><%  
+	          }
+	          String error_msg = (String)request.getAttribute("error_msg");
+	          if(error_msg != null && error_msg.length()>0) {
+	        	%><div style="font-size: 14px; font-weight: bold; color: maroon;" align="center"><%=error_msg%></div><%  
+	          }
+	        %>
        
-       
-       
-       
-       
-        <form action="AdminEventAction" method="POST">
-					  			<div class="form-group">
-					  				<label for="exampleInputEmail1">Event Name </label>
-					  			    <input type="text" class="form-control" placeholder="Event Name" name="Ename">
-					  			</div>
-					  			<div class="form-group">
-					  			  	<label for="exampleInputPassword1">Event Description</label>
-					  			  	<textarea class="form-control" rows="5" name="Edesc"></textarea>
-					  			</div>
-					  			<div class="form-group">
-					  			  	<label for="exampleInputFile">Upload Image Name</label>
-					  			 	 <input type="text" class="form-control" placeholder="Image Name" name="ImageName">					  			</div>
-					  		   
-					  			<div class="form-group">
-					  				<label for="exampleInputEmail1">Provide Youtube URL of video</label>
-					  			    <input type="url" class="form-control" placeholder="URL" name="Eyurl">
-					  			</div>
-					  			<div class="form-group">
-					  				<label for="exampleInputEmail1">Provide INSTA URL</label>
-					  			    <input type="url" class="form-control" placeholder="URL" name="Eiurl">
-					  			</div>
-					  			<table width="100%">
-					  			<tr>
-					  			<td width="48%">
-					  				  <p>Choose a subject <select id="etype" name="Etype" class="form-control">
-      								  <option value="Technical">Technical</option>
-								      <option value="Cultural">Cultural</option>
-								      <option value="Management">Management</option>
-								      <option value="Sports">Sports</option>
-								      </select></p>
-					  			</td>
-					  			<td width="4%">&nbsp;</td>
-					  			<td width="48%">
-					  				<p>No of Seats <input type="number" class="form-control" placeholder="No of Seats" name="NoOfSeat"></p>
-					  			</td>
-					  			</tr>
-					  			</table>
-					  			<br/>
-					  			<br/>
-					  			<div align="center">
-					  			<input type="submit" name="Submit" value="Submit" class="button button2">
-					  			&nbsp;&nbsp; 
-					  			<input type="button" name="Reset" value="Reset" class="button button1">
-					  			</div>
-					  		</form>
-        
-        
-        </p>
       </div>
 		</div>
+		  							
+		  							<div class="row" id = "homeimages">
+  								<div class = "col-lg-3" >
+  									<h3>Choose 8 Images</h3>
+									<form action="/action_page.php">
+  										<label for="myfile">Select files:</label>
+  										<input type="file" id="myfile" name="myfile" multiple><br><br>
+  										<input type="submit">
+									</form>
+  								</div>	
+  								<div class = "col-lg-6" >
+
+									<h3>Image Database</h3>
+
+									<table class="table table-striped table table-bordered">
+										<tr>
+											<th>Image</th>
+											<th></th>
+										</tr>
+										<tr>
+											<td>1.png</td>
+											<td style="color:red"><u>Delete</u></td>
+										</tr>
+										<tr>
+											<td>2.png</td>
+											<td style="color:red"><u>Delete</u></td>
+										</tr>
+										<tr>
+											<td>3.png</td>
+											<td style="color:red"><u>Delete</u></td>
+										</tr>
+										<tr>
+											<td>4.png</td>
+											<td style="color:red"><u>Delete</u></td>
+										</tr>
+
+									</table>
+
+  								</div></div>												
+						
+		
+		
+		
+		
+		
 
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>

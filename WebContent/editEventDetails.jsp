@@ -31,7 +31,7 @@
                     <a href="headerImages.jsp">Header Image Insert & View</a>
                 </li>
                 <li>
-                    <a href="#">Home Images Insert & View</a>
+                    <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
                     <a href="#">>News Insert & View</a>

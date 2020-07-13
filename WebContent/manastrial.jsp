@@ -124,7 +124,7 @@ if(adminEventList != null && adminEventList.size()>0) {
     			</div>
     			<div class="ms-col m5">
  					<div class="container">
-  	  					<img src="images/<%=beans.getImname()%>" alt="Avatar" class="image" style="width:650px ; height:384px;">
+  	  					<img src="images/<%=beans.getImname()%>" alt="Concert1" class="image" style="width:650px ; height:384px;">
   					</div>
       			</div>
     		</div>

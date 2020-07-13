@@ -35,7 +35,7 @@
                     <a href="headerImages.jsp">Header Image Insert & View</a>
                 </li>
                 <li>
-                    <a href="#">Home Images Insert & View</a>
+                    <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
                     <a href="#">>News Insert & View</a>
@@ -120,40 +120,30 @@
 				
 
 
-  						
-	  			  <div class="row">						
-						<div class = "col-lg-9" id = "highlightsinsert">
+  						<div class="row" id="highlightsview"> 						
 
-							<h3>Add Highlight</h3>
-
-							<form action="AdminHighlightAction" method="post">
-								<label> Heading </label>
-								<textarea name="Head" rows="2" cols="60" placeholder="Heading">
-								</textarea>
-								<br><br>
-
-								<label>Description</label>
-								<textarea name="Desc" rows="2" cols="60" placeholder="Description">
-							    </textarea>
-							    <br><br>
-
-							    <label>Choose 8 Images</label>
-							    <label for="myfile">Select files:</label>
-  								<input type="file" id="myfile" name="myfile" multiple><br><br>
-  								
-  								
-  								<label for="exampleInputEmail1">Provide Youtube URL of video</label>
-					  	    	<input type="Hurl1" class="form-control" placeholder="Youtube URL">
-
-					  			<label for="exampleInputEmail1">Provide Youtube URL of video</label>
-					  	    	<input type="Hurl2" class="form-control" placeholder="URL">
-
-					  	    	<button type="submit" class="btn btn-default">Submit</button>
-
-
-							</form>
-
-  						</div>
+						<table class="table table-striped table table-bordered ">
+	  			  		    <tr>
+	  			  		    	<th>Heading </th>
+	  			  		    	<th>Description</th>
+	  			  		    	<th>Images</th>
+	  			  		    	<th>Youtube URL 1</th>
+	  			  		    	<th>Youtube URL 2</th>
+	  			  		    	<th></th>
+	  			  		    </tr>
+	  			  		    <tr>
+	  			  		        <td>A</td>
+	  			  		        <td>B</td>
+	  			  		        <td>C</td>
+	  			  		        <td>D</td>
+	  			  		        <td>E</td>
+	  			  		        <td style="color:red"><a><u> Delete </u></a><td>	  			  		        
+	  			  		    </tr>
+ 	  			  		   
+	  			  		</table>
+	  			  		</div>	
+	  			  	</div>
+	  			  </div>
 	  			  	
                    
 
@@ -163,54 +153,3 @@
     <script src="js/main.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-					
