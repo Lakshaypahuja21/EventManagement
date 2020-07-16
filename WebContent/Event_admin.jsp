@@ -33,7 +33,7 @@
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
-                    <a href="Homenewsinsert.jsp">News Insert & View</a>
+                    <a href="HomeNewsAction">News Insert & View</a>
                 </li>
 	            </ul>
 	          </li>

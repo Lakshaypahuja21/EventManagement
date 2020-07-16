@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="beans.HomeNewsBeans"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -285,14 +288,14 @@ function checkContactUsForm() {
     </div>
     
     <% 
-List<EventNewsBeans> eventNewsList = new ArrayList<EventNewsBeans>();
-eventNewsList = (ArrayList<EventNewsBeans>)request.getSession().getAttribute("eventnewslist");
-int i = 0;
-if(eventNewsList != null && eventNewsList.size()>0) {
-	for(EventNewsBeans beans : eventNewsList) {
+    List<HomeNewsBeans> newsList = new ArrayList<HomeNewsBeans>();	
+	newsList = (ArrayList<HomeNewsBeans>)request.getSession().getAttribute("newslist");
+	int i = 0;
+	if(newsList != null && newsList.size()>0) {
+	for(HomeNewsBeans beans : newsList) {
 		%>
 		
-      <marquee class="GeneratedMarquee" direction="left" scrollamount="11" behavior="scroll"><% beans.getNews() %> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	&nbsp;| &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<% } } %></marquee>
+      <marquee class="GeneratedMarquee" direction="left" scrollamount="11" behavior="scroll"><%=beans.getNewsheadline()%> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	&nbsp;| &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<% } } %></marquee>
     </div>
   </div>
   

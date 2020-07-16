@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.HeaderImagesBeans;
 import beans.HomeNewsBeans;
 
 /**
@@ -49,38 +48,37 @@ public class HomeNewsAction extends HttpServlet {
 		int error_status = 0;
 		HomeNewsBeans homeNewsBeans = new HomeNewsBeans();
 		if(newsheadline != null && newsheadline.length()>0) {
-			homeNewsBeans.setHeadimage(newsheadline);
+			homeNewsBeans.setNewsheadline(newsheadline);
 		} else {
 			error_status = 1;
-			request.setAttribute("error_msg", "Image Should not be blank !!");
+			request.setAttribute("error_msg", "News Should not be blank !!");
 		}
 				// Database save activity will start from here !!!
-		System.out.println(headerImagesBeans.getHeadimage());
-		List<HeaderImagesBeans> adminHighlightList = new ArrayList<HeaderImagesBeans>();	
+		System.out.println(homeNewsBeans.getNewsheadline());
+		List<HomeNewsBeans> newsList = new ArrayList<HomeNewsBeans>();	
 		if(error_status == 0) {
 			
 			try{  
 				Class.forName("com.mysql.jdbc.Driver");  
 				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement","root","root");  
 				
-				PreparedStatement stmt = con.prepareStatement("update headerimage set Headimage=? where Headid=1");
-				stmt.setString(1, headerImagesBeans.getHeadimage());
+				PreparedStatement stmt = con.prepareStatement("update newstable set Newsheadline=? where Newsid=1");
+				stmt.setString(1, homeNewsBeans.getNewsheadline());
 				
 				int  i = stmt.executeUpdate();  
 				System.out.println(i+" records inserted"); 
 				
 				
 					
-					PreparedStatement stmt2 = con.prepareStatement("select Headimage from headerimage");
+					PreparedStatement stmt2 = con.prepareStatement("select Newsheadline from newstable");
 					ResultSet rs = stmt2.executeQuery();
-					List<HeaderImagesBeans> headerImagesList = new ArrayList<HeaderImagesBeans>();	
 					while(rs.next()) {
-						HeaderImagesBeans beans = new HeaderImagesBeans();	
+						HomeNewsBeans beans = new HomeNewsBeans();	
 						
 						
-						beans.setHeadimage(rs.getString(1));
+						beans.setNewsheadline(rs.getString(1));
 						System.out.println(rs.getString(1));
-						adminHighlightList.add(beans);
+						newsList.add(beans);
 						
 						
 					}
@@ -91,10 +89,10 @@ public class HomeNewsAction extends HttpServlet {
 				e.printStackTrace();
 			}  
 		
-			request.getSession().setAttribute("headerImagesList", adminHighlightList);
-			request.getRequestDispatcher("/headerImages.jsp").forward(request, response);
+			request.getSession().setAttribute("newwsList", newsList);
+			request.getRequestDispatcher("/Homenewsinsert.jsp").forward(request, response);
 		} else {
-			request.getRequestDispatcher("/headerImages.jsp").forward(request, response);
+			request.getRequestDispatcher("/Homenewsinsert.jsp").forward(request, response);
 		}
 		
 	

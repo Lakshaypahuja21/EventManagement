@@ -1,4 +1,8 @@
 <!doctype html>
+<%@page import="beans.HomeNewsBeans"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="beans.HeaderImagesBeans"%>
 <html lang="en">
   <head>
   	<title>Admin Panel</title>
@@ -120,16 +124,44 @@
 
 									<h3>News Database</h3>
 
-									<table class="table table-striped table table-bordered">
-										<tr>
-											<th>News</th>
-											<th></th>
-										</tr>
-										<tr>
-											<td>lorem ipsum pipsum lipsum</td>
-											<td style="color:red"><u>Delete</u></td>
-										</tr>
-									</table>
+									
+        <table width="100%" border="1">
+			<tr style="background-color: #CA6F1E; color: #ffffff; font-weight: bold; font-size: 20px;; height: 35px;">	
+			<td align="center">News Database</td>
+			</tr>
+			</table>
+			<hr/>
+			<table width="100%" border="1">
+			<tr style="background-color: blue; color: #ffffff; font-weight: bold; height: 35px;">
+			<td>News headline</td>
+			
+			</tr>
+        	
+        	<%
+          	List<HomeNewsBeans> newsList = new ArrayList<HomeNewsBeans>();
+        	newsList = (ArrayList<HomeNewsBeans>) request.getSession().getAttribute("newwsList");
+			int val=1;
+
+			if(newsList != null && newsList.size()>0) {
+				for(HomeNewsBeans homeNewsBeans : newsList) {
+					%>
+					<tr>
+					<td><%=homeNewsBeans.getNewsheadline() %></td>
+					
+					
+					
+					</tr>
+					<%
+				}
+			} else {
+				%>
+				<tr>
+				<td  colspan="11" align="center"><b>Headline Not Found</b></td>
+				</tr>
+				<%
+			}
+        	%>
+        	</table>
 
   								</div>
 							</div>					
