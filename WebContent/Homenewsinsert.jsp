@@ -68,7 +68,7 @@
 	          </li>
 	        </ul>
 
-	     
+
 	        <div class="footer">
 	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
 	        </div>
@@ -83,7 +83,8 @@
 		%>
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
-      <table width="100%">
+
+        <table width="100%">
         <tr>
         <td width="50%"><h2 class="mb-4">Welcome <%=request.getSession().getAttribute("username")%></h2></td>
         <td width="50%" valign="middle" align="right"><a href="LogoutAction"><img src="images/logout.png" width="50px" height="50px"></a></td>
@@ -91,73 +92,64 @@
         </table>        
         <hr/>
         
-
-        <h2 class="mb-4">Welcome <%=request.getSession().getAttribute("username")%></h2>
         <p>
-        <%String success_msg = (String)request.getAttribute("success_msg");
-          if(success_msg != null && success_msg.length()>0) {
-        	%><div style="font-size: 14px; font-weight: bold; color: green;" align="center"><%=success_msg%></div><%  
-          }
-          String error_msg = (String)request.getAttribute("error_msg");
-          if(error_msg != null && error_msg.length()>0) {
-        	%><div style="font-size: 14px; font-weight: bold; color: maroon;" align="center"><%=error_msg%></div><%  
-          }
-        %>	        
-       
-       
-       
-       
-       
-        <form action="AdminEventAction" method="POST">
-					  			<div class="form-group">
-					  				<label for="exampleInputEmail1">Event Name </label>
-					  			    <input type="text" class="form-control" placeholder="Event Name" name="Ename">
-					  			</div>
-					  			<div class="form-group">
-					  			  	<label for="exampleInputPassword1">Event Description</label>
-					  			  	<textarea class="form-control" rows="5" name="Edesc"></textarea>
-					  			</div>
-					  			<div class="form-group">
-					  			  	<label for="exampleInputFile">Upload Image Name</label>
-					  			 	 <input type="text" class="form-control" placeholder="Image Name" name="ImageName">					  			</div>
-					  		   
-					  			<div class="form-group">
-					  				<label for="exampleInputEmail1">Provide Youtube URL of video</label>
-					  			    <input type="url" class="form-control" placeholder="URL" name="Eyurl">
-					  			</div>
-					  			<div class="form-group">
-					  				<label for="exampleInputEmail1">Provide INSTA URL</label>
-					  			    <input type="url" class="form-control" placeholder="URL" name="Eiurl">
-					  			</div>
-					  			<table width="100%">
-					  			<tr>
-					  			<td width="48%">
-					  				  <p>Choose a subject <select id="etype" name="Etype" class="form-control">
-      								  <option value="Technical">Technical</option>
-								      <option value="Cultural">Cultural</option>
-								      <option value="Management">Management</option>
-								      <option value="Sports">Sports</option>
-								      </select></p>
-					  			</td>
-					  			<td width="4%">&nbsp;</td>
-					  			<td width="48%">
-					  				<p>No of Seats <input type="number" class="form-control" placeholder="No of Seats" name="NoOfSeat"></p>
-					  			</td>
-					  			</tr>
-					  			</table>
-					  			<br/>
-					  			<br/>
-					  			<div align="center">
-					  			<input type="submit" name="Submit" value="Submit" class="button button2">
-					  			&nbsp;&nbsp; 
-					  			<input type="button" name="Reset" value="Reset" class="button button1">
-					  			</div>
-					  		</form>
-        
-        
-        </p>
-      </div>
-		</div>
+        	<%String success_msg = (String)request.getAttribute("success_msg");
+	          if(success_msg != null && success_msg.length()>0) {
+	        	%><div style="font-size: 14px; font-weight: bold; color: green;" align="center"><%=success_msg%></div><%  
+	          }
+	          String error_msg = (String)request.getAttribute("error_msg");
+	          if(error_msg != null && error_msg.length()>0) {
+	        	%><div style="font-size: 14px; font-weight: bold; color: maroon;" align="center"><%=error_msg%></div><%  
+	          }
+	        %>
+        	
+     
+		  		<div class="row" id = "news">
+								<div class="col-lg-6" >
+									<h3>Insert News</h3>								
+									<form action="HomeNewsAction" method="post">
+										<label >Enter Text</label>
+								  		<textarea name="message" rows="5"  placeholder="After typing every news put 5 spaces before another news (Max word limit 100)">
+								  		</textarea>
+								  		<br><br>
+								  		<input type="submit">
+									</form>
+
+								</div>
+								<div class = "col-lg-6" >
+
+									<h3>News Database</h3>
+
+									<table class="table table-striped table table-bordered">
+										<tr>
+											<th>News</th>
+											<th></th>
+										</tr>
+										<tr>
+											<td>lorem ipsum pipsum lipsum</td>
+											<td style="color:red"><u>Delete</u></td>
+										</tr>
+									</table>
+
+  								</div>
+							</div>					
+		  						
+		  						
+		  						
+		  						
+		  						
+		  						
+		  						
+		  						
+		  						
+		  																		
+						</div> </div>
+	
+		
+		
+		
+		
+		
 
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>

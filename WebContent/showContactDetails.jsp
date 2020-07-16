@@ -40,7 +40,7 @@
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
-                    <a href="#">>News Insert & View</a>
+                    <a href="Homenewsinsert.jsp">News Insert & View</a>
                 </li>
 	            </ul>
 	          </li>
@@ -48,17 +48,17 @@
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Highlights</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
-              <li>
+                <li>
                     <a href="highlightsinsert.jsp">Highlights Insert</a>
                 </li>
                 <li>
-                    <a href="highlightsview.jsp">Highlights View</a>
+                    <a href="AdminHighlightDisplayAction">Highlights View</a>
                 </li>
               </ul>
 	          </li>
 	          <li>
-              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
-              <ul class="collapse list-unstyled" id="pageSubmenu">
+              <a href="#eventsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
+              <ul class="collapse list-unstyled" id="eventsSubmenu">
                 <li>
                     <a href="EventDetails.jsp">Insert Event</a>
                 </li>
@@ -75,15 +75,7 @@
 	          </li>
 	        </ul>
 
-	        <div class="mb-5">
-						<h3 class="h6">Subscribe for newsletter</h3>
-						<form action="#" class="colorlib-subscribe-form">
-	            <div class="form-group d-flex">
-	            	<div class="icon"><span class="icon-paper-plane"></span></div>
-	              <input type="text" class="form-control" placeholder="Enter Email Address">
-	            </div>
-	          </form>
-					</div>
+	    
 
 	        <div class="footer">
 	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
@@ -91,7 +83,12 @@
 
 	      </div>
     	</nav>
-
+<%
+		String username =(String) request.getSession().getAttribute("username");
+		if(username == null) {
+			response.sendRedirect("index.jsp");
+		}
+		%>
         <!-- Page Content  -->
         
         

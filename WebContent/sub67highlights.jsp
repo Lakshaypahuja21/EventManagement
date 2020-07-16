@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@page import="java.util.ArrayList"%>
+<%@page import="beans.AdminHighlightsBeans"%>
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
 
 <html>
@@ -74,235 +77,68 @@
   
  <h1 class="paddings" style="text-align: left; margin: 80px 0px 40px 20px;">Highlights</h1>
 
-<!-- Star Night Highlights 2020 -->
-<div class="ms-container" style="padding 10px 16px" id="work">
-  <h3 class="ms-center">67th Milestone 2020</h3>
-  <p class="ms-center ms-large">Ritviz & Maninder Bhutter</p>
-
-  <div class="ms-row-padding" style="margin-top:64px">
-    <div class="ms-col l3 m6">
-      <img src="images/lt1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A microphone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/lt3.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A phone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/lt2.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A drone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/lt4.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="Soundbox">
-    </div>
-  </div>
-
-  <div class="ms-row-padding ms-section">
-    <div class="ms-col l3 m6">
-      <img src="images/lt5.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tablet">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/ra_DJ.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A camera">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/ra_DJ2.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A typewriter">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/ra_DJ3.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tableturner">
-    </div>
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="ms-modal ms-black" onclick="this.style.display='none'">
-  <span class="ms-button ms-xxlarge ms-black ms-padding-large ms-display-topright" title="Close Modal Image">×</span>
-  <div class="ms-modal-content ms-animate-zoom ms-center ms-transparent ms-padding-64">
-    <img id="img01" class="ms-image">
-    <p id="caption" class="ms-opacity ms-large"></p>
-  </div>
-</div>
-
-
-
-<!-- Star Night Highlights 2019 -->
-<div class="ms-container" style="padding 10px 16px" id="work">
-  <h3 class="ms-center" style="margin-top:150px">67th Milestone 2019</h3>
-  <p class="ms-center ms-large">The Local Train & Zaeden</p>
-
-  <div class="ms-row-padding" style="margin-top:64px">
-    <div class="ms-col l3 m6">
-      <img src="images/ra_DJ.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A microphone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/zaeden.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A phone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/concert2.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A drone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/concert2.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="Soundbox">
-    </div>
-  </div>
-
-  <div class="ms-row-padding ms-section">
-    <div class="ms-col l3 m6">
-      <img src="images/ra_DJ.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tablet">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/ra_DJ2.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A camera">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/ra_DJ3.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A typewriter">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/concert3.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tableturner">
-    </div>
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="ms-modal ms-black" onclick="this.style.display='none'">
-  <span class="ms-button ms-xxlarge ms-black ms-padding-large ms-display-topright" title="Close Modal Image">×</span>
-  <div class="ms-modal-content ms-animate-zoom ms-center ms-transparent ms-padding-64">
-    <img id="img01" class="ms-image">
-    <p id="caption" class="ms-opacity ms-large"></p>
-  </div>
-</div>
 
 
 
 
 
-<!-- Star Night Highlights 2018 -->
-<div class="ms-container" style="padding 10px 16px" id="work">
-  <h3 class="ms-center" style="margin-top:150px">67th Milestone 2018</h3>
-  <p class="ms-center ms-large">Ritviz & Maninder Bhutter</p>
-
-  <div class="ms-row-padding" style="margin-top:64px">
-    <div class="ms-col l3 m6">
-      <img src="images/lt1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A microphone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/lt2.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A phone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/ltbest.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A drone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/concert2.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="Soundbox">
-    </div>
-  </div>
-
-  <div class="ms-row-padding ms-section">
-    <div class="ms-col l3 m6">
-      <img src="images/star_night1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tablet">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/star_night2.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A camera">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/star_night1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A typewriter">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/star_night2.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tableturner">
-    </div>
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="ms-modal ms-black" onclick="this.style.display='none'">
-  <span class="ms-button ms-xxlarge ms-black ms-padding-large ms-display-topright" title="Close Modal Image">×</span>
-  <div class="ms-modal-content ms-animate-zoom ms-center ms-transparent ms-padding-64">
-    <img id="img01" class="ms-image">
-    <p id="caption" class="ms-opacity ms-large"></p>
-  </div>
-</div>
 
 
+<% 
+List<AdminHighlightsBeans> adminHighlightList = new ArrayList<AdminHighlightsBeans>();
+adminHighlightList = (ArrayList<AdminHighlightsBeans>)request.getSession().getAttribute("adminhighlightlist");
+int i = 0;
+if(adminHighlightList != null && adminHighlightList.size()>0) {
+	for(AdminHighlightsBeans beans : adminHighlightList) {
+		%>
+		<%if(i%2==0) {%>
+		<div class="ms-container ms-light-grey"  style="padding:64px 16px; margin-top:80px;">
+		<%} else {%>
+		<div class="ms-container"  style="padding-top:64px;padding-bottom:64px; padding-left: 16px;padding-right:16px margin-top:80px;">
+		<%}%>
+			<h3 class="ms-center"><%=beans.getHead()%></h3>
+  			<p class="ms-center ms-large"><%=beans.getDesc()%></p>
+  			<div class="ms-row-padding">
+   				<div class="ms-col m6">
+				     <div class="container">
+  	  					<img src="images/<%=beans.getHimage1()%>" alt="Concert1" class="image" style="width:650px ; height:384px;">
+  					 </div>
+    			</div>
+    			<div class="ms-col m6">
+ 					 
+ 					 <iframe width="650" height="384" src="https://www.youtube.com/embed/<%=beans.getHurl1()%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      			</div>
+    		</div>
+    		<br>
+    		<div class="ms-row-padding">
+   				<div class="ms-col m6">
+				     <div class="container">
+  	  					<img src="images/<%=beans.getHimage2()%>" alt="Concert1" class="image" style="width:650px ; height:384px;">
+  					 </div>
+    			</div>
+    			<div class="ms-col m6">
+ 					 					 <iframe width="650" height="384" src="https://www.youtube.com/embed/<%=beans.getHurl2()%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      			</div>
+    		</div>
+		</div>		
+		<%
+		i++;
+	}	
+}
+%>
 
 
 
-<!-- Star Night Highlights 2017 -->
-<div class="ms-container" style="padding 10px 16px" id="work">
-  <h3 class="ms-center" style="margin-top:150px">67th Milestone 2017</h3>
-  <p class="ms-center ms-large">Ritviz & Maninder Bhutter</p>
-
-  <div class="ms-row-padding" style="margin-top:64px">
-    <div class="ms-col l3 m6">
-      <img src="images/concert2.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A microphone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/concert2.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A phone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/concert2.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A drone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/concert2.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="Soundbox">
-    </div>
-  </div>
-
-  <div class="ms-row-padding ms-section">
-    <div class="ms-col l3 m6">
-      <img src="images/star_night1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tablet">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/star_night2.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A camera">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/star_night1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A typewriter">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/star_night2.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tableturner">
-    </div>
-  </div>
-</div>
-
-<!-- Modal for full size images on click-->
-<div id="modal01" class="ms-modal ms-black" onclick="this.style.display='none'">
-  <span class="ms-button ms-xxlarge ms-black ms-padding-large ms-display-topright" title="Close Modal Image">×</span>
-  <div class="ms-modal-content ms-animate-zoom ms-center ms-transparent ms-padding-64">
-    <img id="img01" class="ms-image">
-    <p id="caption" class="ms-opacity ms-large"></p>
-  </div>
-</div>
-
-<!-- News and Update Section -->
-<div class="ms-container ms-light-grey ms-padding-64" style="margin-bottom:80px; margin-top:150px">
-  <div class="ms-row-padding">
-    <div class="ms-col m6">
-      <h3>News and Updates</h3>
-    </div>
-      <marquee class="GeneratedMarquee" direction="left" scrollamount="11" behavior="scroll">News and updates here!</marquee>
-    </div>
-  </div>
-
-<h1 style="text-align: left; margin:150px 0px 80px 20px;">YouTube videos</h1>
 
 
-<div class="container" style="margin-bottom:150px">
- <div class ="row"> 
-
-<div class="col-lg-6 col-md-6">
-  <div class="thumbnail">
-
-  <iframe width="548" height="315" src="https://www.youtube.com/embed/nJuSx3zf9pg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-  </div>
-</div>
 
 
-<div class="col-lg-6 col-md-6">
-  <div class="thumbnail">
-  
-  <iframe width="548" height="315" src="https://www.youtube.com/embed/nJuSx3zf9pg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-  </div>
-</div>
- </div>
-</div>
 
-</div>
 
-</div>
-</div>
+
+
 
 <footer class="ms-center ms-black ms-padding-64">
   <a href="#home" class="ms-button ms-light-grey"><i class="fa fa-arrow-up ms-margin-right"></i>To the top</a>

@@ -13,19 +13,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.AdminEventBeans;
 import beans.AdminHighlightsBeans;
 
 /**
- * Servlet implementation class AdminHighlightDisplayAction
+ * Servlet implementation class UserHighlightDetails
  */
-public class AdminHighlightDisplayAction extends HttpServlet {
+public class UserHighlightDetails extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminHighlightDisplayAction() {
+    public UserHighlightDetails() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,7 +34,7 @@ public class AdminHighlightDisplayAction extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doPost(request, response);
+		doPost(request , response);
 	}
 
 	/**
@@ -73,8 +72,10 @@ public class AdminHighlightDisplayAction extends HttpServlet {
 		request.getSession().setAttribute("adminhighlightlist", adminHighlightList);
 		
 		
-		request.getRequestDispatcher("/highlightsview.jsp").forward(request, response);
+		request.getRequestDispatcher("sub67highlights.jsp").forward(request, response);
 		
+	
+
 	}
 
 }

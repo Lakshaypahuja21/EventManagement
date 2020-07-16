@@ -33,24 +33,25 @@
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
-                    <a href="#">News Insert & View</a>
+                    <a href="Homenewsinsert.jsp">News Insert & View</a>
                 </li>
 	            </ul>
 	          </li>
+	         
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Highlights</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
-               <li>
+                <li>
                     <a href="highlightsinsert.jsp">Highlights Insert</a>
                 </li>
                 <li>
-                    <a href="highlightsview.jsp">Highlights View</a>
+                    <a href="AdminHighlightDisplayAction">Highlights View</a>
                 </li>
               </ul>
 	          </li>
 	          <li>
-              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
-              <ul class="collapse list-unstyled" id="pageSubmenu">
+              <a href="#eventsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Events</a>
+              <ul class="collapse list-unstyled" id="eventsSubmenu">
                 <li>
                     <a href="EventDetails.jsp">Insert Event</a>
                 </li>
@@ -67,15 +68,6 @@
 	          </li>
 	        </ul>
 
-	        <div class="mb-5">
-						<h3 class="h6">Subscribe for newsletter</h3>
-						<form action="#" class="colorlib-subscribe-form">
-	            <div class="form-group d-flex">
-	            	<div class="icon"><span class="icon-paper-plane"></span></div>
-	              <input type="text" class="form-control" placeholder="Enter Email Address">
-	            </div>
-	          </form>
-					</div>
 
 	        <div class="footer">
 	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
@@ -83,7 +75,12 @@
 
 	      </div>
     	</nav>
-
+<%
+		String username =(String) request.getSession().getAttribute("username");
+		if(username == null) {
+			response.sendRedirect("index.jsp");
+		}
+		%>
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
 
@@ -106,22 +103,35 @@
 	          }
 	        %>
        
-      </div>
-		</div>
+     
 		  							
 		  							<div class="row" id = "homeimages">
-  								<div class = "col-lg-3" >
-  									<h3>Choose 8 Images</h3>
-									<form action="/action_page.php">
-  										<label for="myfile">Select files:</label>
-  										<input type="file" id="myfile" name="myfile" multiple><br><br>
-  										<input type="submit">
-									</form>
-  								</div>	
-  								<div class = "col-lg-6" >
-
-									<h3>Image Database</h3>
-
+  								<div class = "col-lg-8" >
+  								<h3>Select Images</h3>
+  								<form action="" method="post">
+								<label for="exampleInputFile">Upload Image1 Name</label>
+								<input type="text" class="form-control" placeholder="Image Name1" name="Homeimage1">
+										<label for="exampleInputFile">Upload Image2 Name</label>
+								<input type="text" class="form-control" placeholder="Image Name2" name="Homeimage2">
+										<label for="exampleInputFile">Upload Image3 Name</label>
+								<input type="text" class="form-control" placeholder="Image Name3" name="Homeimage3">
+										<label for="exampleInputFile">Upload Image4 Name</label>
+								<input type="text" class="form-control" placeholder="Image Name4" name="Homeimage4">
+										<label for="exampleInputFile">Upload Image5 Name</label>
+								<input type="text" class="form-control" placeholder="Image Name5" name="Homeimage5">
+										<label for="exampleInputFile">Upload Image6 Name</label>
+								<input type="text" class="form-control" placeholder="Image Name6" name="Homeimage6">
+					<label for="exampleInputFile">Upload Image7 Name</label>
+								<input type="text" class="form-control" placeholder="Image Name7" name="Homeimage7">
+										<label for="exampleInputFile">Upload Image8 Name</label>
+								<input type="text" class="form-control" placeholder="Image Name8" name="Homeimage8">
+											
+				
+				<br>
+				<input type="submit" name="Submit" value="Submit" class="button button2">
+  				</form>
+							<hr>		
+<h3>Image Database</h3>
 									<table class="table table-striped table table-bordered">
 										<tr>
 											<th>Image</th>
@@ -147,7 +157,8 @@
 									</table>
 
   								</div></div>												
-						
+						</div> </div>
+	
 		
 		
 		

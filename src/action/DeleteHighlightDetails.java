@@ -17,15 +17,15 @@ import beans.AdminEventBeans;
 import beans.AdminHighlightsBeans;
 
 /**
- * Servlet implementation class AdminHighlightDisplayAction
+ * Servlet implementation class DeleteHighlightDetails
  */
-public class AdminHighlightDisplayAction extends HttpServlet {
+public class DeleteHighlightDetails extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminHighlightDisplayAction() {
+    public DeleteHighlightDetails() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,7 +35,8 @@ public class AdminHighlightDisplayAction extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doPost(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		this.doPost(request, response);
 	}
 
 	/**
@@ -45,10 +46,15 @@ public class AdminHighlightDisplayAction extends HttpServlet {
 		// TODO Auto-generated method stub
 		List<AdminHighlightsBeans> adminHighlightList = new ArrayList<AdminHighlightsBeans>();
 		try{  
+			String hid = request.getParameter("highlight_id");
 			Class.forName("com.mysql.jdbc.Driver");  
-			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement","root","root");  
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement","root","root"); 
 			
-			PreparedStatement stmt = con.prepareStatement("select Hid, Head,Descdescription,Hurl1,Hurl2,Himage1,Himage2 from eventhighlights");
+			PreparedStatement stmtin = con.prepareStatement("delete from eventhighlights where Hid = "+hid);
+			int  i = stmtin.executeUpdate();  
+			System.out.println(i+" records inserted");
+			
+			PreparedStatement stmt = con.prepareStatement("select Hid,Head,Descdescription,Hurl1,Hurl2,Himage1,Himage2 from eventhighlights");
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
 				AdminHighlightsBeans beans = new AdminHighlightsBeans();
@@ -58,23 +64,23 @@ public class AdminHighlightDisplayAction extends HttpServlet {
 				beans.setHead(rs.getString(2));
 				System.out.println(rs.getString(2));
 				beans.setDesc(rs.getString(3));
-				beans.setHurl1(rs.getString(4));
-				beans.setHurl2(rs.getString(5));
 				beans.setHimage1(rs.getString(6));
 				beans.setHimage2(rs.getString(7));
-								
+				beans.setHurl1(rs.getString(4));
+				beans.setHurl2(rs.getString(5));
+				
 				adminHighlightList.add(beans);
 			}			
 			  
 			con.close();
 		} catch(Exception e) { 
 			e.printStackTrace();
+			request.setAttribute("error_msg", "Somthing Went Wrong!! Unable to delete data.");
 		} 
-		request.getSession().setAttribute("adminhighlightlist", adminHighlightList);
-		
-		
+		request.setAttribute("success_msg", "Event Details Deleted Successfully");
+		request.getSession().setAttribute("adminhighlightlist", adminHighlightList);		
 		request.getRequestDispatcher("/highlightsview.jsp").forward(request, response);
-		
 	}
 
 }
+

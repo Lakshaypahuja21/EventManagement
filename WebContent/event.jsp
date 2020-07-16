@@ -22,6 +22,9 @@
 <link rel="stylesheet" href="/resources/demos/style.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
 <script type="text/javascript">
@@ -146,7 +149,7 @@ function checkContactUsForm() {
     <div class="ms-col m6">
       <h3>67th Milestone</h3>
       <p>The 67th Milestone is a themed fest hosting a wide range of artists, performers, athletes and technicians from colleges all over North India, especially Delhi and Delhi NCR. The uniqueness of the 67th Milestone lies in the opportunities and once in a lifetime experiences for it’s attendees.We at BMU strive at being founts of values and virtues sources that emanate values and virtues that create better societies and Education is one of the most significant tools to do so. With the aim of Elevating through Education we are trying to establish a connecting link between the resourceful and the deprived.</p>
-      <p><a href="sub67highlights.jsp" class="ms-button ms-black"><i class="fa fa-th"> </i> View previous edition highlights</a></p>
+      <p><a href="UserHighlightDetails" class="ms-button ms-black"><i class="fa fa-th"> </i> View previous edition highlights</a></p>
       <a href="https://www.instagram.com/67thmilestone_heroschallenge/?hl=en"><i class="fa fa-instagram ms-hover-opacity"></i></a>
     </div>
     <div class="ms-col m6">
@@ -166,7 +169,7 @@ function checkContactUsForm() {
         <div class="ms-container">
           <h3>Parikshit</h3>
           <p class="ms-opacity">Marketing Head</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p> At the helm of the marketing department is the marketing director, tasked with overseeing the development and implementation of marketing strategies, and with guiding the team that executes them.</p>
           <p><button class="ms-button ms-light-grey ms-block"><i class="fa fa-envelope"></i> Contact</button></p>
         </div>
       </div>
@@ -177,7 +180,8 @@ function checkContactUsForm() {
         <div class="ms-container">
           <h3>Manas Yadav</h3>
           <p class="Sponsorship head">Art Director</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p>Art directors are responsible for overseeing the care of valuable art pieces within a collection. This role also requires managing staff to ensure the proper care for different pieces of art, as well as ensuring strict guidelines exist that help determine how each piece of art is handled.
+</p>
           <p><button class="ms-button ms-light-grey ms-block"><i class="fa fa-envelope"></i> Contact</button></p>
         </div>
       </div>
@@ -188,7 +192,7 @@ function checkContactUsForm() {
         <div class="ms-container">
           <h3>Lakshay</h3>
           <p class="ms-opacity">Web Designer</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p>A Web Developer is responsible for the coding, design and layout of a website according to a company's specifications. As the role takes into consideration user experience and function, a certain level of both graphic design and computer programming is necessary.</p>
           <p><button class="ms-button ms-light-grey ms-block"><i class="fa fa-envelope"></i> Contact</button></p>
         </div>
       </div>
@@ -272,7 +276,28 @@ function checkContactUsForm() {
   </div>
 </div>
 
+
 <!-- News and Update Section -->
+<div class="ms-container ms-light-grey ms-padding-64" style="margin-bottom:80px">
+  <div class="ms-row-padding">
+    <div class="ms-col m6">
+      <h3>News and Updates</h3>
+    </div>
+    
+    <% 
+List<EventNewsBeans> eventNewsList = new ArrayList<EventNewsBeans>();
+eventNewsList = (ArrayList<EventNewsBeans>)request.getSession().getAttribute("eventnewslist");
+int i = 0;
+if(eventNewsList != null && eventNewsList.size()>0) {
+	for(EventNewsBeans beans : eventNewsList) {
+		%>
+		
+      <marquee class="GeneratedMarquee" direction="left" scrollamount="11" behavior="scroll"><% beans.getNews() %> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	&nbsp;| &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<% } } %></marquee>
+    </div>
+  </div>
+  
+  
+<!-- News and Update Section 
 <div class="ms-container ms-light-grey ms-padding-64" style="margin-bottom:80px">
   <div class="ms-row-padding">
     <div class="ms-col m6">
@@ -280,7 +305,7 @@ function checkContactUsForm() {
     </div>
       <marquee class="GeneratedMarquee" direction="left" scrollamount="11" behavior="scroll">Star Nights @ 10pm &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	&nbsp;| &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	MUN speakers debate started &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	| &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	  Beat the street award ceremony at 9pm</marquee>
     </div>
-  </div>
+  </div>-->
     <!-- <div class="ms-col m6">
       <h3>Seats filled</h3>
       <p class="ms-wide"><i class="fa fa-camera ms-margin-right"></i>Cultural Events</p>
@@ -300,8 +325,7 @@ function checkContactUsForm() {
 
 
 <!-- Event Section -->
-
-<div class="ms-container ms-center ms-dark-grey" style="padding:128px 16px" id="pricing">
+<div class="ms-container ms-center ms-dark-grey" style="padding:12px 16px" id="pricing">
   <h3>Events</h3>
   
   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -315,18 +339,24 @@ function checkContactUsForm() {
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="images/concert.jpg" alt="BTS" width="700" height="394">
+      <img src="images/lt1.jpeg" alt="BTS" width="700" height="394">
       <div class="carousel-caption">
-        ...
+        
       </div>
     </div>
     <div class="item">
-      <img src="images/concert1.jpg" alt="MUN" width="700" height="394">
+      <img src="images/lt2.jpeg" alt="MUN" width="700" height="394">
       <div class="carousel-caption">
-        ...
+        
       </div>
     </div>
-    ...
+     <div class="item">
+      <img src="images/lt4.jpeg" alt="buzz" width="700" height="394">
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+    
   </div>
 
   <!-- Controls -->
@@ -339,7 +369,7 @@ function checkContactUsForm() {
     <span class="sr-only">Next</span>
   </a>
 </div>
-  
+  </div>
   <!--  
   
   
@@ -420,7 +450,7 @@ function checkContactUsForm() {
   -->
   
   
-</div>
+
 
 
 

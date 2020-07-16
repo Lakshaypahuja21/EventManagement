@@ -25,14 +25,73 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
 <script src="js/Lib/bootstrap.min.js"></script>
+<style type="text/css">
+ .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: #ffffff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
 
+.button1 {
+  background-color: #008CBA; /* Green */	
+}
 
+.button1:hover {
+  background-color: #008CBA; /* Green */	
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+</style>
+<script type="text/javascript">
+
+function showSportsDetails() {
+	$("#SportsDiv").show();
+	$("#TechnicalDiv").hide();
+	$("#CulturalDiv").hide();
+	$("#ManagementDiv").hide();
+}
+
+function showTechnicalDetails() {
+	
+	$("#TechnicalDiv").show();
+	$("#SportsDiv").hide();	
+	$("#CulturalDiv").hide();
+	$("#ManagementDiv").hide();
+}
+
+function showCulturalDetails() {
+	$("#CulturalDiv").show();	
+	$("#SportsDiv").hide();
+	$("#TechnicalDiv").hide();
+	$("#ManagementDiv").hide();
+}
+
+function showManagementDetails() {
+	$("#ManagementDiv").show();
+	$("#SportsDiv").hide();
+	$("#TechnicalDiv").hide();
+	$("#CulturalDiv").hide();	
+}
+</script>
 
 </head>
 <body>
 
 <!-- Navbar (sit on top) -->
 <div class="ms-top">
+ <div class="ms-bar ms-white ms-card" id="myNavbar">
   <div class="ms-right ms-hide-small">
       <a href="event.jsp#about" class="ms-bar-item ms-button">ABOUT</a>
       <a href="event.jsp#team" class="ms-bar-item ms-button"><i class="fa fa-user"></i> TEAM</a>
@@ -69,31 +128,51 @@
       <i class="fa fa-music ms-margin-bottom ms-jumbo ms-center"></i>
       <p class="ms-large">Cultural Events</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <br/>
+      <a href=#showcultural onclick="showCulturalDetails();"><p class="button button1">View</p></a>
+      
+					  			
     </div>
     <div class="ms-quarter">
       <i class="fa fa-users ms-margin-bottom ms-jumbo"></i>
       <p class="ms-large">Management Events</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+   	  <br/>
+   	  <a href=#showmanagement onclick="showManagementDetails();"><p class="button button1">View</p></a>
+     
     </div>
     <div class="ms-quarter">
       <i class="fa fa-microchip ms-margin-bottom ms-jumbo"></i>
       <p class="ms-large">Technical Events</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+   	  <br/>
+   	  <div>
+     
+     	<a href=#showtechnical onclick="showTechnicalDetails();"><p class="button button1">View</p></a>
+      
+     </div>
     </div>
     <div class="ms-quarter">
       <i class="fa fa-futbol-o ms-margin-bottom ms-jumbo"></i>
       <p class="ms-large">Sports</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <br/>
+      <a href=#showsports onclick="showSportsDetails();"><p class="button button1">View</p></a>
+     
     </div>
   </div>
 </div>
 
+
+<div id="TechnicalDiv">
+<div id="showtechnical" align="center"><h2>Technical Events</h2></div>
 <% 
 List<AdminEventBeans> adminEventList = new ArrayList<AdminEventBeans>();
 adminEventList = (ArrayList<AdminEventBeans>)request.getSession().getAttribute("admineventlist");
 int i = 0;
 if(adminEventList != null && adminEventList.size()>0) {
 	for(AdminEventBeans beans : adminEventList) {
+		if(beans.getEtype().equalsIgnoreCase("Technical")) {
 		%>
 		<%if(i%2==0) {%>
 		<div class="ms-container ms-light-grey"  style="padding:64px 16px; margin-top:80px;">
@@ -131,13 +210,169 @@ if(adminEventList != null && adminEventList.size()>0) {
 		</div>		
 		<%
 		i++;
+		}
 	}	
 }
 %>
+</div>
+</div>
+
+<div id="CulturalDiv" style="display: none;">
+<div id="showcultural" align="center"><h2>Cultural Events</h2></div>
+<% 
+i = 0;
+if(adminEventList != null && adminEventList.size()>0) {
+	for(AdminEventBeans beans : adminEventList) {
+		if(beans.getEtype().equalsIgnoreCase("Cultural")) {
+		%>
+		<%if(i%2==0) {%>
+		<div class="ms-container ms-light-grey"  style="padding:64px 16px; margin-top:80px;">
+		<%} else {%>
+		<div class="ms-container"  style="padding-top:64px;padding-bottom:64px; padding-left: 16px;padding-right:16px margin-top:80px;">
+		<%}%>
+  			<div class="ms-row-padding">
+   				<div class="ms-col m7">
+				     <H3><%=beans.getEname()%></H3>
+				     <br>
+				     <table width="100%">
+				     <tr style="background: #866ec7; color: #fff; height: 50px; font-size: 18px;">
+				     <td width="5%"></td>
+				     <td width="30%">Event Date: <b>23-07-2020</b></td>
+				     <td width="30%">No of Seats : <b><%=beans.getNo_of_seat() %></b></td>
+				     <td width="30%">Available Seats : <b><%=beans.getAval_seat() %></b></td>
+				     <td width="5%"></td>
+				     </tr>
+				     </table>
+				     <br/>
+				     <p><%=beans.getEdesc() %></p>
+				     <br/>
+				     <div>
+    					<a href="<%=beans.getEyurl()%>" target="_blank"><img src="images/youtubelogo.png" width="70px" height="50px"></a>
+    					&nbsp;&nbsp;&nbsp;
+    					<a href="<%=beans.getEiurl()%>" target="_blank"><img src="images/instagramlogo.png" width="50px" height="50px"></a>
+  	  				 </div>
+    			</div>
+    			<div class="ms-col m5">
+ 					<div class="container">
+  	  					<img src="images/<%=beans.getImname()%>" alt="Concert1" class="image" style="width:650px ; height:384px;">
+  					</div>
+      			</div>
+    		</div>
+		</div>		
+		<%
+		i++;
+		}
+	}	
+}
+%>
+</div>
+</div>
 
 
+<div id="ManagementDiv" style="display: none;">
+<div id="showmanagement" align="center"><h2>Management Events</h2></div>
+<% 
+i = 0;
+if(adminEventList != null && adminEventList.size()>0) {
+	for(AdminEventBeans beans : adminEventList) {
+		if(beans.getEtype().equalsIgnoreCase("Management")) {
+		%>
+		<%if(i%2==0) {%>
+		<div class="ms-container ms-light-grey"  style="padding:64px 16px; margin-top:80px;">
+		<%} else {%>
+		<div class="ms-container"  style="padding-top:64px;padding-bottom:64px; padding-left: 16px;padding-right:16px margin-top:80px;">
+		<%}%>
+  			<div class="ms-row-padding">
+   				<div class="ms-col m7">
+				     <H3><%=beans.getEname()%></H3>
+				     <br>
+				     <table width="100%">
+				     <tr style="background: #866ec7; color: #fff; height: 50px; font-size: 18px;">
+				     <td width="5%"></td>
+				     <td width="30%">Event Date: <b>23-07-2020</b></td>
+				     <td width="30%">No of Seats : <b><%=beans.getNo_of_seat() %></b></td>
+				     <td width="30%">Available Seats : <b><%=beans.getAval_seat() %></b></td>
+				     <td width="5%"></td>
+				     </tr>
+				     </table>
+				     <br/>
+				     <p><%=beans.getEdesc() %></p>
+				     <br/>
+				     <div>
+    					<a href="<%=beans.getEyurl()%>" target="_blank"><img src="images/youtubelogo.png" width="70px" height="50px"></a>
+    					&nbsp;&nbsp;&nbsp;
+    					<a href="<%=beans.getEiurl()%>" target="_blank"><img src="images/instagramlogo.png" width="50px" height="50px"></a>
+  	  				 </div>
+    			</div>
+    			<div class="ms-col m5">
+ 					<div class="container">
+  	  					<img src="images/<%=beans.getImname()%>" alt="Concert1" class="image" style="width:650px ; height:384px;">
+  					</div>
+      			</div>
+    		</div>
+		</div>		
+		<%
+		i++;
+		}
+	}	
+}
+%>
+</div>
+</div>
+
+<div id="SportsDiv" style="display: none;">
+<div id="showsports" align="center"><h2>Sports Events</h2></div>
+<% 
+i = 0;
+if(adminEventList != null && adminEventList.size()>0) {
+	for(AdminEventBeans beans : adminEventList) {
+		if(beans.getEtype().equalsIgnoreCase("Sports")) {
+		%>
+		<%if(i%2==0) {%>
+		<div class="ms-container ms-light-grey"  style="padding:64px 16px; margin-top:80px;">
+		<%} else {%>
+		<div class="ms-container"  style="padding-top:64px;padding-bottom:64px; padding-left: 16px;padding-right:16px margin-top:80px;">
+		<%}%>
+  			<div class="ms-row-padding">
+   				<div class="ms-col m7">
+				     <H3><%=beans.getEname()%></H3>
+				     <br>
+				     <table width="100%">
+				     <tr style="background: #866ec7; color: #fff; height: 50px; font-size: 18px;">
+				     <td width="5%"></td>
+				     <td width="30%">Event Date: <b>23-07-2020</b></td>
+				     <td width="30%">No of Seats : <b><%=beans.getNo_of_seat() %></b></td>
+				     <td width="30%">Available Seats : <b><%=beans.getAval_seat() %></b></td>
+				     <td width="5%"></td>
+				     </tr>
+				     </table>
+				     <br/>
+				     <p><%=beans.getEdesc() %></p>
+				     <br/>
+				     <div>
+    					<a href="<%=beans.getEyurl()%>" target="_blank"><img src="images/youtubelogo.png" width="70px" height="50px"></a>
+    					&nbsp;&nbsp;&nbsp;
+    					<a href="<%=beans.getEiurl()%>" target="_blank"><img src="images/instagramlogo.png" width="50px" height="50px"></a>
+  	  				 </div>
+    			</div>
+    			<div class="ms-col m5">
+ 					<div class="container">
+  	  					<img src="images/<%=beans.getImname()%>" alt="Concert1" class="image" style="width:650px ; height:384px;">
+  					</div>
+      			</div>
+    		</div>
+		</div>		
+		<%
+		i++;
+		}
+	}	
+}
+%>
+</div>
+</div>
 
 
+<br><br><br>
 <!-- Footer -->
 <footer class="ms-center ms-black ms-padding-64">
   <a href="#home" class="ms-button ms-light-grey"><i class="fa fa-arrow-up ms-margin-right"></i>To the top</a>

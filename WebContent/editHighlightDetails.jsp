@@ -1,4 +1,5 @@
 <!doctype html>
+<%@page import="beans.AdminHighlightsBeans"%>
 <html lang="en">
   <head>
   	<title>Admin Panel</title>
@@ -68,7 +69,16 @@
 	          </li>
 	        </ul>
 
-	     
+	        <div class="mb-5">
+						<h3 class="h6">Subscribe for newsletter</h3>
+						<form action="#" class="colorlib-subscribe-form">
+	            <div class="form-group d-flex">
+	            	<div class="icon"><span class="icon-paper-plane"></span></div>
+	              <input type="text" class="form-control" placeholder="Enter Email Address">
+	            </div>
+	          </form>
+					</div>
+
 	        <div class="footer">
 	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
 	        </div>
@@ -83,14 +93,6 @@
 		%>
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
-      <table width="100%">
-        <tr>
-        <td width="50%"><h2 class="mb-4">Welcome <%=request.getSession().getAttribute("username")%></h2></td>
-        <td width="50%" valign="middle" align="right"><a href="LogoutAction"><img src="images/logout.png" width="50px" height="50px"></a></td>
-        </tr>
-        </table>        
-        <hr/>
-        
 
         <h2 class="mb-4">Welcome <%=request.getSession().getAttribute("username")%></h2>
         <p>
@@ -102,53 +104,41 @@
           if(error_msg != null && error_msg.length()>0) {
         	%><div style="font-size: 14px; font-weight: bold; color: maroon;" align="center"><%=error_msg%></div><%  
           }
+          
+          AdminHighlightsBeans beans = new AdminHighlightsBeans();
+          beans = (AdminHighlightsBeans) request.getSession().getAttribute("adminhighlightbeans");	
         %>	        
-       
-       
-       
-       
-       
-        <form action="AdminEventAction" method="POST">
-					  			<div class="form-group">
-					  				<label for="exampleInputEmail1">Event Name </label>
-					  			    <input type="text" class="form-control" placeholder="Event Name" name="Ename">
-					  			</div>
-					  			<div class="form-group">
-					  			  	<label for="exampleInputPassword1">Event Description</label>
-					  			  	<textarea class="form-control" rows="5" name="Edesc"></textarea>
-					  			</div>
-					  			<div class="form-group">
-					  			  	<label for="exampleInputFile">Upload Image Name</label>
-					  			 	 <input type="text" class="form-control" placeholder="Image Name" name="ImageName">					  			</div>
-					  		   
-					  			<div class="form-group">
-					  				<label for="exampleInputEmail1">Provide Youtube URL of video</label>
-					  			    <input type="url" class="form-control" placeholder="URL" name="Eyurl">
-					  			</div>
-					  			<div class="form-group">
-					  				<label for="exampleInputEmail1">Provide INSTA URL</label>
-					  			    <input type="url" class="form-control" placeholder="URL" name="Eiurl">
-					  			</div>
-					  			<table width="100%">
-					  			<tr>
-					  			<td width="48%">
-					  				  <p>Choose a subject <select id="etype" name="Etype" class="form-control">
-      								  <option value="Technical">Technical</option>
-								      <option value="Cultural">Cultural</option>
-								      <option value="Management">Management</option>
-								      <option value="Sports">Sports</option>
-								      </select></p>
-					  			</td>
-					  			<td width="4%">&nbsp;</td>
-					  			<td width="48%">
-					  				<p>No of Seats <input type="number" class="form-control" placeholder="No of Seats" name="NoOfSeat"></p>
-					  			</td>
-					  			</tr>
-					  			</table>
-					  			<br/>
-					  			<br/>
+        <form action="UpdateHighlightDetails" method="POST">
+        						<input type="hidden" name="hid" value="<%=beans.getHid()%>"/>
+        						<label for="heading">Heading</label>
+					  			 	<input type="text" class="form-control" placeholder="Heading" name="Head" value="<%=beans.getHead()%>">
+								
+							
+								<label for="desc">Description</label>
+					  			 	<input type="text" class="form-control" placeholder="Description" name="Desc" value="<%=beans.getDesc()%>">
+								
+								
+							  
+									
+									<label for="exampleInputFile">Upload Image Name</label>
+					  			 	<input type="text" class="form-control" placeholder="Image Name" name="Himage1" value="<%=beans.getHimage1()%>">	
+					  			 	  
+					  			 	 <label for="exampleInputFile">Upload 2nd Image Name</label>
+					  			 	<input type="text" class="form-control" placeholder="Image Name" name="Himage2" value="<%=beans.getHimage2()%>">	
+							    
+  								
+  								
+  								<label for="exampleInputEmail1">Provide Youtube URL of video</label>
+					  	    	<input type="text" name="Hurl1" class="form-control" value="<%=beans.getHurl1()%>">
+
+					  			<label for="exampleInputEmail1">Provide Youtube URL of video</label>
+					  	    	<input type="text" name="Hurl2" class="form-control" value="<%=beans.getHurl2()%>">
+								
+								<br/>
+								<br/>					  			
+					  								  			
 					  			<div align="center">
-					  			<input type="submit" name="Submit" value="Submit" class="button button2">
+					  			<input type="submit" name="Update" value="Update" class="button button2">
 					  			&nbsp;&nbsp; 
 					  			<input type="button" name="Reset" value="Reset" class="button button1">
 					  			</div>

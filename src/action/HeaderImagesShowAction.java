@@ -13,19 +13,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import beans.AdminEventBeans;
-import beans.AdminHighlightsBeans;
+import beans.HeaderImagesBeans;
 
 /**
- * Servlet implementation class AdminHighlightDisplayAction
+ * Servlet implementation class HeaderImagesShowAction
  */
-public class AdminHighlightDisplayAction extends HttpServlet {
+public class HeaderImagesShowAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AdminHighlightDisplayAction() {
+    public HeaderImagesShowAction() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,38 +42,39 @@ public class AdminHighlightDisplayAction extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		List<AdminHighlightsBeans> adminHighlightList = new ArrayList<AdminHighlightsBeans>();
+		List<HeaderImagesBeans> headerImagesList = new ArrayList<HeaderImagesBeans>();
 		try{  
 			Class.forName("com.mysql.jdbc.Driver");  
 			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement","root","root");  
 			
-			PreparedStatement stmt = con.prepareStatement("select Hid, Head,Descdescription,Hurl1,Hurl2,Himage1,Himage2 from eventhighlights");
+			PreparedStatement stmt = con.prepareStatement("select Headid, Headimage from headerimage");
 			ResultSet rs = stmt.executeQuery();
 			while(rs.next()) {
-				AdminHighlightsBeans beans = new AdminHighlightsBeans();
+				HeaderImagesBeans beans = new HeaderImagesBeans();
 				
-				beans.setHid(rs.getInt(1));
-				System.out.println(rs.getInt(1));
-				beans.setHead(rs.getString(2));
-				System.out.println(rs.getString(2));
-				beans.setDesc(rs.getString(3));
-				beans.setHurl1(rs.getString(4));
-				beans.setHurl2(rs.getString(5));
-				beans.setHimage1(rs.getString(6));
-				beans.setHimage2(rs.getString(7));
-								
-				adminHighlightList.add(beans);
+				beans.setHeadid(rs.getInt(1));
+				beans.setHeadimage(rs.getString(2));
+				
+				
+				headerImagesList.add(beans);
 			}			
 			  
+			
+			
+					
+			
 			con.close();
 		} catch(Exception e) { 
 			e.printStackTrace();
 		} 
-		request.getSession().setAttribute("adminhighlightlist", adminHighlightList);
-		
-		
-		request.getRequestDispatcher("/highlightsview.jsp").forward(request, response);
+	
+		request.getSession().setAttribute("headerImagesList", headerImagesList);
+		request.getRequestDispatcher("/headerImages.jsp").forward(request, response);
+	
 		
 	}
-
 }
+
+
+
+

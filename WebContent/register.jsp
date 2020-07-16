@@ -255,7 +255,8 @@ function showRegForm() {
 				
 			</div>	        
 	    </div>
-	</div>
+	</div></div>
+	<br>
 
 	<footer class="ms-center ms-black ms-padding-64">
   <a href="#home" class="ms-button ms-light-grey"><i class="fa fa-arrow-up ms-margin-right"></i>To the top</a>
@@ -265,6 +266,7 @@ function showRegForm() {
   </div>
   <p>67 Milestone</p>
 </footer>
+
  
 
 	<script type="text/javascript" src="stylesheets/register.css"></script>
