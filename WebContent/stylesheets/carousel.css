@@ -12,13 +12,7 @@ body, html
 }
 
 /* Full height image header */
-.bgimg-1 
-{
-  background-position: center;
-  background-size: cover;
-  background-image: url("ltbest.jpg");
-  min-height: 100%;
-}
+
 .eventimg
 {
  

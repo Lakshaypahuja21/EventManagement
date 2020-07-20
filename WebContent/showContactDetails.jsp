@@ -16,6 +16,9 @@
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/style.css">
+		
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+		
   </head>
   <body>
 		
@@ -40,7 +43,7 @@
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
-                    <a href="Homenewsinsert.jsp">News Insert & View</a>
+                    <a href="HomeNewsAction">News Insert & View</a>
                 </li>
 	            </ul>
 	          </li>
@@ -76,10 +79,6 @@
 	        </ul>
 
 	    
-
-	        <div class="footer">
-	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
-	        </div>
 
 	      </div>
     	</nav>
@@ -124,7 +123,8 @@
 		<hr/>
 		<br/>
 	  
-		<table width="100%" border="1">
+		<table width="100%" border="1" id="contdtl" class="display">
+		<thead>
 		<tr style="background-color: blue; color: #ffffff; font-weight: bold; height: 35px;">	
 		<td>ID</td>
 		<td> Name</td>
@@ -133,6 +133,8 @@
 		<td>message</td>
 		<td>Entry Date</td>
 		</tr>
+		</thead>
+		<tbody>
 		<%
 		List<ContactUSBeans> contactUsList = new ArrayList<ContactUSBeans>();
 		contactUsList = (ArrayList<ContactUSBeans>) request.getSession().getAttribute("contactUsList");
@@ -152,6 +154,7 @@
 			}	
 		}
 		%>
+		</tbody>
 		</table>
 	  
 	  </p>
@@ -163,5 +166,15 @@
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    
+     <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#contdtl').DataTable( {
+			"pagingType": "full_numbers"
+		} );
+	} );
+	</script>
   </body>
 </html>

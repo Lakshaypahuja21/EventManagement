@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>EventManagement</display-name>
   <welcome-file-list>
-    <welcome-file>event.jsp</welcome-file>
+    <welcome-file>welcome.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <description></description>
@@ -283,5 +283,35 @@
   <servlet-mapping>
     <servlet-name>HomeNewsAction</servlet-name>
     <url-pattern>/HomeNewsAction</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DisplayHomePage</display-name>
+    <servlet-name>DisplayHomePage</servlet-name>
+    <servlet-class>action.DisplayHomePage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayHomePage</servlet-name>
+    <url-pattern>/displayHomePage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteNewsId</display-name>
+    <servlet-name>DeleteNewsId</servlet-name>
+    <servlet-class>action.DeleteNewsId</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteNewsId</servlet-name>
+    <url-pattern>/DeleteNewsId</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>HomeImageInsertAction</display-name>
+    <servlet-name>HomeImageInsertAction</servlet-name>
+    <servlet-class>action.HomeImageInsertAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeImageInsertAction</servlet-name>
+    <url-pattern>/HomeImageInsertAction</url-pattern>
   </servlet-mapping>
 </web-app>

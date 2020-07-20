@@ -68,7 +68,7 @@ function showRegForm() {
 <!-- -------------------------------------------------------------------------------------------------------- -->
 
 </head>
-<body>
+<body style="background-image: url(images/ltbest.jpg);">
 	<div class="ms-top">
 		<div class="ms-bar ms-white ms-card" id="myNavbar">
     		<a href="#home" class="ms-bar-item ms-button ms-wide">67th Milestone</a>
@@ -93,19 +93,16 @@ function showRegForm() {
   		</div>
 	</div>
 
-	<div class= "container">
+
+		<div class="ms-container ms-row ms-center ms-dark-grey ms-padding-64" style="background-image: url(images/IMG_3631-01.jpeg);">
+		   <H1>Registration Page </H1></div>		
+		<br><br>
+		<div class= "container">
 		<div class="jumbotron">
-		   <H2>Registeration Page </H2>		
-		</div>
-		
-		
-		
-		
-		
 		<div class ="row"> 
 			<div class="col-lg-6 col-md-6" id="form" >
 				<div class="dropdown">
-				<p>Choose Event 
+				<p><h3>Choose Event </h3>
 				<select id="subject" name="subject" onchange="showRegForm();">
    					<option value="bts" id="id_1">Beat The Sreet</option>
     				<option value="mun" id="id_2">Siera MUN</option>
@@ -113,10 +110,18 @@ function showRegForm() {
    			    </select>
   				</div>
 <!--------------------------------------------------- bts form starts here------------------------------------- -->
-  				<div id="form1">
+  				<div id="form1" style = "align:center ;">
   				<form class="bts form" action="RegisterAction" method="POST" onsubmit="return checkRegisterForm();">
   				
-  					
+  					<%
+          String error_msg = (String)request.getAttribute("error_msg");
+          if(error_msg != null && error_msg.length()>0) {
+        	%><div style="font-size: 14px; font-weight: bold; color: maroon;" align="center"><%=error_msg%></div><%  
+          }String success_msg = (String)request.getAttribute("success_msg");
+          if(success_msg != null && success_msg.length()>0) {
+        	%><div style="font-size: 14px; font-weight: bold; color: green;" align="center"><%=success_msg%></div><%  
+          }
+        %>	
   					<div class="form-row">
     					<div class="col">
     						<label >First Name</label>
@@ -149,14 +154,23 @@ function showRegForm() {
       						<input type="checkbox" value=" 1" name="transportbts" > Transportation Required
       					</label>
   					</div> -->
- 						<!--<button type="submit" class="btn btn-default">Submit</button> -->
-            <input type="submit" value="Submit">
+ 						<button type="submit" class="mutton">Submit</button> 
+            
 				</form>
 				</div>
 <!------------------------------------------------- mun form starts  here ---------------------------------------------------- -->
 				
 				<div id="form2" style="display: none">
 				<form class="mun form" action="RegisterActionMun" method="POST" onsubmit="return checkRegisterForm();">
+				<%
+          String error_msg1 = (String)request.getAttribute("error_msg");
+          if(error_msg1 != null && error_msg1.length()>0) {
+        	%><div style="font-size: 14px; font-weight: bold; color: maroon;" align="center"><%=error_msg1%></div><%  
+          }String success_msg1 = (String)request.getAttribute("success_msg");
+          if(success_msg1 != null && success_msg1.length()>0) {
+        	%><div style="font-size: 14px; font-weight: bold; color: green;" align="center"><%=success_msg1%></div><%  
+          }
+        %>	
   					<div class="form-row">
     					<div class="col">
     						 <label >First Name</label>
@@ -196,18 +210,23 @@ function showRegForm() {
 					    <option value="3">Shashi Tharoor</option>
 					</select>
  					 
-  					<div class="checkbox">
-  						<label>
-      						<input type="checkbox"> Transportation Required
-      					</label>
-  					</div>
- 					<button type="submit" class="btn btn-default">Submit</button>
+  					
+ 					<button type="submit" class="mutton">Submit</button>
 				</form>
 				</div>
-<!-------------------------------------------- buzzform starts her-e ------------------------------------->		
+<!-------------------------------------------- buzz form starts her-e ------------------------------------->		
 
 				<div id="form3" style="display: none;">
 				<form class="buzz form" action="RegisterActionBuzz" method="POST" onsubmit="return checkRegisterForm();">
+				<%
+          String error_msg2 = (String)request.getAttribute("error_msg");
+          if(error_msg2 != null && error_msg2.length()>0) {
+        	%><div style="font-size: 14px; font-weight: bold; color: maroon;" align="center"><%=error_msg2%></div><%  
+          }
+       String success_msg2 = (String)request.getAttribute("success_msg");
+          if(success_msg2 != null && success_msg2.length()>0) {
+        	%><div style="font-size: 14px; font-weight: bold; color: green;" align="center"><%=success_msg2%></div><%  
+          } %>	
   					<div class="form-row">
     					<div class="col">
     						<label >First Name</label>
@@ -236,13 +255,7 @@ function showRegForm() {
     					<input type="number" class="form-control" placeholder="Max 4" min="1" max = "4" name="teambuzz">
     				</div>
   
-  					<div class="checkbox">
-  						<label>
-      						<input type="checkbox"> Transportation Required
-      					</label>
-  					</div>
-  					<button type="submit" class="btn btn-default">Submit</button>
-				
+  					<button type="submit" class="mutton">Submit</button>				
 				</form>
 									
 	       
@@ -255,7 +268,7 @@ function showRegForm() {
 				
 			</div>	        
 	    </div>
-	</div></div>
+	</div></div></div>
 	<br>
 
 	<footer class="ms-center ms-black ms-padding-64">

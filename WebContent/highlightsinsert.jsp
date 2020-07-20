@@ -38,7 +38,7 @@
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
-                    <a href="Homenewsinsert.jsp">News Insert & View</a>
+                    <a href="HomeNewsAction">News Insert & View</a>
                 </li>
 	            </ul>
 	          </li>
@@ -75,9 +75,7 @@
 
 	       
 
-	        <div class="footer">
-	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
-	        </div>
+	      
 
 	      </div>
     	</nav>

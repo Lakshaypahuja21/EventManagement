@@ -18,6 +18,13 @@ body
     {
 	padding-top: 1%;
 	}
+.bgimg-1 
+{
+  background-position: center;
+  background-size: cover;
+  background-image: url(/images/ltbest.jpg);
+  min-height: 100%;
+}	
 
  .footer
 	{

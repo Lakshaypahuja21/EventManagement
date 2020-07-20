@@ -115,16 +115,18 @@ public class RegisterActionMun extends HttpServlet {
 				
 				int  i = stmt.executeUpdate();  
 				System.out.println(i+" records inserted"); 
+				con.close();
+				request.setAttribute("success_msg", "Your have successfully registered for the event !!");
 				
-				con.close();  
+					
 			} catch(Exception e) { 
 				e.printStackTrace();
+				request.setAttribute("error_msg", "oops some error! try again later !!");
+				
 			}  
 		
-			request.setAttribute("error_msg", "Your request has been submited successfully !!");
-			request.getRequestDispatcher("/contactsuccess.jsp").forward(request, response);
-		} else {
-			request.getRequestDispatcher("/event.jsp").forward(request, response);
+		
+			request.getRequestDispatcher("/register.jsp").forward(request, response);
 		}
 		
 	}

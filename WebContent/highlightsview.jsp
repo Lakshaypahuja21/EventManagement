@@ -29,14 +29,14 @@
 	          <li class="active">
 	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li>
+               <li>
                     <a href="headerImages.jsp">Header Image Insert & View</a>
                 </li>
                 <li>
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
-                    <a href="Homenewsinsert.jsp">News Insert & View</a>
+                    <a href="HomeNewsAction">News Insert & View</a>
                 </li>
 	            </ul>
 	          </li>
@@ -71,22 +71,12 @@
 	          </li>
 	        </ul>
 
-	        <div class="mb-5">
-						<h3 class="h6">Subscribe for newsletter</h3>
-						<form action="#" class="colorlib-subscribe-form">
-	            <div class="form-group d-flex">
-	            	<div class="icon"><span class="icon-paper-plane"></span></div>
-	              <input type="text" class="form-control" placeholder="Enter Email Address">
-	            </div>
-	          </form>
-					</div>
-
-	        <div class="footer">
-	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
-	        </div>
+	    
 
 	      </div>
     	</nav>
+    	
+    	<!-- security for pages -->
 <%
 		String username =(String) request.getSession().getAttribute("username");
 		if(username == null) {
@@ -116,7 +106,7 @@
 	        %>
         	<table width="100%" border="1">
 			<tr style="background-color: #CA6F1E; color: #ffffff; font-weight: bold; font-size: 20px;; height: 35px;">	
-			<td align="center">Events Detail's</td>
+			<td align="center">Highlights Detail's</td>
 			</tr>
 			</table>
 			<hr/>

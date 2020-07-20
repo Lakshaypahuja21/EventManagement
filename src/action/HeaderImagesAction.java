@@ -62,7 +62,7 @@ public class HeaderImagesAction extends HttpServlet {
 		}
 				// Database save activity will start from here !!!
 		System.out.println(headerImagesBeans.getHeadimage());
-		List<HeaderImagesBeans> adminHighlightList = new ArrayList<HeaderImagesBeans>();	
+		List<HeaderImagesBeans> adminheadList = new ArrayList<HeaderImagesBeans>();	
 		if(error_status == 0) {
 			
 			try{  
@@ -86,7 +86,7 @@ public class HeaderImagesAction extends HttpServlet {
 						
 						beans.setHeadimage(rs.getString(1));
 						System.out.println(rs.getString(1));
-						adminHighlightList.add(beans);
+						adminheadList.add(beans);
 						
 						
 					}
@@ -97,7 +97,7 @@ public class HeaderImagesAction extends HttpServlet {
 				e.printStackTrace();
 			}  
 		
-			request.getSession().setAttribute("headerImagesList", adminHighlightList);
+			request.getSession().setAttribute("headerimagesList", adminheadList);
 			request.getRequestDispatcher("/headerImages.jsp").forward(request, response);
 		} else {
 			request.getRequestDispatcher("/headerImages.jsp").forward(request, response);

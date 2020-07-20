@@ -110,14 +110,14 @@ public class ContactUsAction extends HttpServlet {
 				System.out.println(i+" records inserted"); 
 				
 				con.close();  
+				request.setAttribute("success_msg", "Thanks for contacting us! Our team will surely connect with you");
+				
 			} catch(Exception e) { 
 				e.printStackTrace();
+				request.setAttribute("error_msg", "Somthing Went Wrong!! Try again");
 			}  
 		
-			request.setAttribute("error_msg", "Your request has been submited successfully !!");
-			request.getRequestDispatcher("/contactsuccess.jsp").forward(request, response);
-		} else {
-			request.getRequestDispatcher("/event.jsp").forward(request, response);
+			request.getRequestDispatcher("displayHomePage#contact").forward(request, response);
 		}
 		
 	}

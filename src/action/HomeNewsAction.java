@@ -62,7 +62,7 @@ public class HomeNewsAction extends HttpServlet {
 				Class.forName("com.mysql.jdbc.Driver");  
 				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/eventmanagement","root","root");  
 				
-				PreparedStatement stmt = con.prepareStatement("update newstable set Newsheadline=? where Newsid=1");
+				PreparedStatement stmt = con.prepareStatement("insert into newstable(Newsheadline) values(?)");
 				stmt.setString(1, homeNewsBeans.getNewsheadline());
 				
 				int  i = stmt.executeUpdate();  
@@ -70,14 +70,14 @@ public class HomeNewsAction extends HttpServlet {
 				
 				
 					
-					PreparedStatement stmt2 = con.prepareStatement("select Newsheadline from newstable");
+					PreparedStatement stmt2 = con.prepareStatement("select Newsid,Newsheadline from newstable");
 					ResultSet rs = stmt2.executeQuery();
 					while(rs.next()) {
 						HomeNewsBeans beans = new HomeNewsBeans();	
 						
-						
-						beans.setNewsheadline(rs.getString(1));
-						System.out.println(rs.getString(1));
+						beans.setNewsid(rs.getInt(1));
+						beans.setNewsheadline(rs.getString(2));
+						System.out.println(rs.getString(2));
 						newsList.add(beans);
 						
 						

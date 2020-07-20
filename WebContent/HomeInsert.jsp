@@ -1,4 +1,7 @@
 <!doctype html>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="beans.HomeImageInsertBeans"%>
 <html lang="en">
   <head>
   	<title>Admin Panel</title>
@@ -33,7 +36,7 @@
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
-                    <a href="Homenewsinsert.jsp">News Insert & View</a>
+                    <a href="HomeNewsAction">News Insert & View</a>
                 </li>
 	            </ul>
 	          </li>
@@ -69,12 +72,12 @@
 	        </ul>
 
 
-	        <div class="footer">
-	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
-	        </div>
+	      
 
 	      </div>
     	</nav>
+    	
+    	<!-- security for pages -->
 <%
 		String username =(String) request.getSession().getAttribute("username");
 		if(username == null) {
@@ -108,7 +111,7 @@
 		  							<div class="row" id = "homeimages">
   								<div class = "col-lg-8" >
   								<h3>Select Images</h3>
-  								<form action="" method="post">
+  								<form action="HomeImageInsertAction" method="post">
 								<label for="exampleInputFile">Upload Image1 Name</label>
 								<input type="text" class="form-control" placeholder="Image Name1" name="Homeimage1">
 										<label for="exampleInputFile">Upload Image2 Name</label>
@@ -131,30 +134,56 @@
 				<input type="submit" name="Submit" value="Submit" class="button button2">
   				</form>
 							<hr>		
-<h3>Image Database</h3>
-									<table class="table table-striped table table-bordered">
-										<tr>
-											<th>Image</th>
-											<th></th>
-										</tr>
-										<tr>
-											<td>1.png</td>
-											<td style="color:red"><u>Delete</u></td>
-										</tr>
-										<tr>
-											<td>2.png</td>
-											<td style="color:red"><u>Delete</u></td>
-										</tr>
-										<tr>
-											<td>3.png</td>
-											<td style="color:red"><u>Delete</u></td>
-										</tr>
-										<tr>
-											<td>4.png</td>
-											<td style="color:red"><u>Delete</u></td>
-										</tr>
+  
+        <table width="100%" border="1">
+			<tr style="background-color: #CA6F1E; color: #ffffff; font-weight: bold; font-size: 20px;; height: 35px;">	
+			<td align="center">Images Database</td>
+			</tr>
+			</table>
+			<hr/>
+			<table width="100%" border="1">
+			<tr style="background-color: blue; color: #ffffff; font-weight: bold; height: 35px;">
+			<td>Head image1</td>
+			<td>Head image2</td>
+			<td>Head image3</td>
+			<td>Head image4</td>
+			<td>Head image5</td>
+			<td>Head image6</td>
+			<td>Head image7</td>
+			<td>Head image8</td>
+			
+			</tr>
+        	
+        	<%
+        	List<HomeImageInsertBeans> homeImagesList = new ArrayList<HomeImageInsertBeans>();
+        	homeImagesList = (ArrayList<HomeImageInsertBeans>) request.getSession().getAttribute("homeimageslist");
+			int val=1;
 
-									</table>
+			if(homeImagesList != null && homeImagesList.size()>0) {
+				for(HomeImageInsertBeans homeImagesInsertBeans : homeImagesList) {
+					%>
+					<tr>
+					<td><%=homeImagesInsertBeans.getHomeimage1() %></td>
+					<td><%=homeImagesInsertBeans.getHomeimage2() %></td>
+					<td><%=homeImagesInsertBeans.getHomeimage3() %></td>
+					<td><%=homeImagesInsertBeans.getHomeimage4() %></td>
+					<td><%=homeImagesInsertBeans.getHomeimage5() %></td>
+					<td><%=homeImagesInsertBeans.getHomeimage6() %></td>
+					<td><%=homeImagesInsertBeans.getHomeimage7() %></td>
+					<td><%=homeImagesInsertBeans.getHomeimage8() %></td>
+									
+					</tr>
+					<%
+				}
+			} else {
+				%>
+				<tr>
+				<td  colspan="11" align="center"><b>Data Not Found</b></td>
+				</tr>
+				<%
+			}
+        	%>
+        	</table>
 
   								</div></div>												
 						</div> </div>

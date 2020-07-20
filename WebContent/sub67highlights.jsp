@@ -15,6 +15,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="stylesheets/67milestone.css">
+<link rel="stylesheet" href="stylesheets/event.css">
 <link rel="stylesheet" href="stylesheets/lib.css">
 <link rel="stylesheet" href="stylesheets/lib2.css">
 
@@ -23,6 +24,7 @@
 <link rel="stylesheet" href="stylesheets/font.css">
 <link rel="stylesheet" href="stylesheets/fontsmin.css">
 <link rel="stylesheet" href="design/css/font-awesome.min.css">
+
 
 
 </head>
@@ -63,7 +65,9 @@
 </nav>
 
 <!-- Header with full-height image -->
-<header class="bgimg-1 ms-display-container ms-grayscale-min" id="home">
+<header class="bgimg-1 ms-display-container ms-grayscale-min" id="home" style="background-image:url(images/ltbest.jpg)">
+ <!-- <header class="bgimg-1 ms-display-container ms-grayscale-min" id="home" style="background-image:url(images/ltbest.jpg)" >
+  -->
   <div class="ms-display-left ms-text-white" style="padding:48px">
     <span class="ms-jumbo ms-hide-small">Star Nights</span><br>
     <span class="ms-xxlarge ms-hide-large ms-hide-medium">Star Nights</span><br>
@@ -86,6 +90,7 @@
 
 <% 
 List<AdminHighlightsBeans> adminHighlightList = new ArrayList<AdminHighlightsBeans>();
+
 adminHighlightList = (ArrayList<AdminHighlightsBeans>)request.getSession().getAttribute("adminhighlightlist");
 int i = 0;
 if(adminHighlightList != null && adminHighlightList.size()>0) {
@@ -96,8 +101,8 @@ if(adminHighlightList != null && adminHighlightList.size()>0) {
 		<%} else {%>
 		<div class="ms-container"  style="padding-top:64px;padding-bottom:64px; padding-left: 16px;padding-right:16px margin-top:80px;">
 		<%}%>
-			<h3 class="ms-center"><%=beans.getHead()%></h3>
-  			<p class="ms-center ms-large"><%=beans.getDesc()%></p>
+			<h2 class="ms-center"><%=beans.getHead()%></h2>
+  			<p class="ms-center ms-large"><%=beans.getDesc()%><br><br></p>
   			<div class="ms-row-padding">
    				<div class="ms-col m6">
 				     <div class="container">
@@ -105,16 +110,17 @@ if(adminHighlightList != null && adminHighlightList.size()>0) {
   					 </div>
     			</div>
     			<div class="ms-col m6">
+    			<div class="container">
+  	  					<img src="images/<%=beans.getHimage2()%>" alt="Concert1" class="image" style="width:650px ; height:384px;">
+  					 </div>
  					 
- 					 <iframe width="650" height="384" src="https://www.youtube.com/embed/<%=beans.getHurl1()%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       			</div>
     		</div>
     		<br>
     		<div class="ms-row-padding">
    				<div class="ms-col m6">
-				     <div class="container">
-  	  					<img src="images/<%=beans.getHimage2()%>" alt="Concert1" class="image" style="width:650px ; height:384px;">
-  					 </div>
+				      					 <iframe width="650" height="384" src="https://www.youtube.com/embed/<%=beans.getHurl1()%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
     			</div>
     			<div class="ms-col m6">
  					 					 <iframe width="650" height="384" src="https://www.youtube.com/embed/<%=beans.getHurl2()%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

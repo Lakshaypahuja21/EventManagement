@@ -80,7 +80,7 @@ span.psw {
 }
 </style>
 </head>
-<body style="background-color: rgb(0, 191, 255);">
+<body style="background-image: url(images/ltbest.jpg);">
 <br/></br>
 <div align="center">
 <div style="width: 30%; background-color: #ffffff;" align="center">
@@ -114,7 +114,8 @@ span.psw {
    <br/> <span class="psw">Forgot <a href="#">password?</a></span><br/><br/>
   </div>
 </form>
-</div>
+</div><br/><br/>
+<a href="<%=request.getContextPath()%>/displayHomePage" style="font-size: 18px; color: #ffffff;">Go back to Website? Click Here</a>
 </div>
 
 </body>

@@ -1,3 +1,6 @@
+<%@page import="beans.HomeImageInsertBeans"%>
+<%@page import="action.HomeImageInsertAction"%>
+<%@page import="beans.HeaderImagesBeans"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="beans.HomeNewsBeans"%>
@@ -6,6 +9,125 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<style>
+.bgimg-1 
+{
+  background-position: center;
+  background-size: cover;
+  background-image: url(ltbest.jpg);
+  min-height: 100%;
+}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+</style>
+
+
+
+
+
+
 <meta charset="ISO-8859-1">
 <title>Event Website</title>
 <meta charset="UTF-8">
@@ -28,7 +150,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+<style type="text/css">
+.mySlides {display:none;}
+</style>
 
 <script type="text/javascript">
 function checkContactUsForm() {
@@ -48,8 +172,29 @@ function checkContactUsForm() {
 	return true;
 }
 
-
 </script>
+<script>
+var myIndex = 1;
+carousel();
+
+function carousel() {
+   var i;
+   for (i = 1; i <= 3; i++) {
+	   $("#myslide"+i).hide();  
+   }
+   
+   if (myIndex == 4) {myIndex = 1}    
+   $("#myslide"+myIndex).show(); 
+   myIndex++;
+   setTimeout(carousel, 2000); // Change image every 2 seconds
+ }
+</script>
+
+
+
+
+
+
 </head>
 <body>
 
@@ -59,11 +204,11 @@ function checkContactUsForm() {
     <a href="#home" class="ms-bar-item ms-button ms-wide">67th Milestone</a>
     <!-- Right-sided navbar links -->
     <div class="ms-right ms-hide-small">
-      <a href="#about" class="ms-bar-item ms-button">ABOUT</a>
-      <a href="#team" class="ms-bar-item ms-button"><i class="fa fa-address-book"></i> TEAM</a>
+      <a href="#about" class="ms-bar-item ms-button">ABOUT</a>     
       <a href="showEventsDetails" class="ms-bar-item ms-button"><i class="fa fa-music"></i> EVENTS</a>
-      <a href="#contact" class="ms-bar-item ms-button"><i class="fa fa-envelope"></i> CONTACT</a>
-      <a href="register.jsp" class="ms-bar-item ms-button"><i class="fa fa-plus"></i> REGISTER</a>
+      <a href="register.jsp" class="ms-bar-item ms-button"><i class="fa fa-plus"></i> REGISTER</a>      
+       <a href="#team" class="ms-bar-item ms-button"><i class="fa fa-address-book"></i> TEAM</a>
+       <a href="#contact" class="ms-bar-item ms-button"><i class="fa fa-envelope"></i> CONTACT</a>     
       <a href="index.jsp" class="ms-bar-item ms-button"><i class="fa fa-key"></i> Admin</a>
 
     </div>
@@ -88,8 +233,23 @@ function checkContactUsForm() {
 </nav>
 
 <!-- Header with full-height image -->
-<header class="bgimg-1 ms-display-container ms-grayscale-min" id="home" style="background-image:url(images/ltbest.jpg)">
-  <div class="ms-display-left ms-text-white" style="padding:48px">
+<% 
+List<HeaderImagesBeans> imgList = new ArrayList<HeaderImagesBeans>();
+
+imgList = (ArrayList<HeaderImagesBeans>)request.getSession().getAttribute("headerImagesList");
+int i = 0;
+if(imgList != null && imgList.size()>0) {
+	for(HeaderImagesBeans beans : imgList) {
+
+		%>
+<header class="bgimg-1 ms-display-container ms-grayscale-min" id="home" style="background-image:url(images/<%=beans.getHeadimage()%>)" >
+
+<%}
+	}
+	%>
+	
+<!-- <header class="bgimg-1 ms-display-container ms-grayscale-min" id="home" style="background-image:url(images/ltbest.jpg)" >
+  --><div class="ms-display-left ms-text-white" style="padding:48px">
     <span class="ms-jumbo ms-hide-small" style="color:white">Educate to Elevate</span><br>
     <span class="ms-xxlarge ms-hide-large ms-hide-medium">Educate to Elevate</span><br>
     <span class="ms-large" style="color:white">Fest for a cause</span>
@@ -130,6 +290,30 @@ function checkContactUsForm() {
   </div>
 </div>
 
+
+<!-- News and Update Section -->
+<div class="ms-container ms-light-grey ms-padding-64" style="margin-bottom:80px">
+  <div class="ms-row-padding">
+    <div class="ms-col m6">
+      <h3>News and Updates</h3>
+    </div>
+    
+    <% 
+    List<HomeNewsBeans> newsList = new ArrayList<HomeNewsBeans>();	
+	newsList = (ArrayList<HomeNewsBeans>)request.getSession().getAttribute("newwsList");
+	
+	if(newsList != null && newsList.size()>0) {
+		%> <marquee class="GeneratedMarquee" direction="left" scrollamount="11" behavior="scroll" style="height: 60px;  font-size: 24px;"><%
+		for(HomeNewsBeans beans : newsList) {
+			out.print(beans.getNewsheadline());
+			%>&nbsp;&nbsp;| &nbsp; &nbsp;<%
+		} 
+		%></marquee><%
+	} %>
+    </div>
+  </div>
+
+
 <!-- About university" -->
 <div class="ms-container ms-light-grey" style="padding:128px 16px">
   <div class="ms-row-padding">
@@ -161,58 +345,7 @@ function checkContactUsForm() {
   </div>
 </div>
 
-<!-- Team Section -->
-<div class="ms-container" style="padding:128px 16px" id="team">
-  <h3 class="ms-center">THE TEAM</h3>
-  <p class="ms-center ms-large">The ones who run this Fest</p>
-  <div class="ms-row-padding ms-grayscale" style="margin-top:64px">
-    <div class="ms-col l4 m6 ms-margin-bottom">
-      <div class="ms-card">
-        <img src="images/parikshit.jpeg" alt="Parikshit" style="width:100%; height:300px;">
-        <div class="ms-container">
-          <h3>Parikshit</h3>
-          <p class="ms-opacity">Marketing Head</p>
-          <p> At the helm of the marketing department is the marketing director, tasked with overseeing the development and implementation of marketing strategies, and with guiding the team that executes them.</p>
-          <p><button class="ms-button ms-light-grey ms-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="ms-col l4 m6 ms-margin-bottom">
-      <div class="ms-card">
-        <img src="images/manas.png" alt="Manas" style="width:100%; height:300px;">
-        <div class="ms-container">
-          <h3>Manas Yadav</h3>
-          <p class="Sponsorship head">Art Director</p>
-          <p>Art directors are responsible for overseeing the care of valuable art pieces within a collection. This role also requires managing staff to ensure the proper care for different pieces of art, as well as ensuring strict guidelines exist that help determine how each piece of art is handled.
-</p>
-          <p><button class="ms-button ms-light-grey ms-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="ms-col l4 m6 ms-margin-bottom" >
-      <div class="ms-card">
-        <img src="images/lakshay.jpeg" alt="Lakshay" style="width:100%; height:300px;">
-        <div class="ms-container">
-          <h3>Lakshay</h3>
-          <p class="ms-opacity">Web Designer</p>
-          <p>A Web Developer is responsible for the coding, design and layout of a website according to a company's specifications. As the role takes into consideration user experience and function, a certain level of both graphic design and computer programming is necessary.</p>
-          <p><button class="ms-button ms-light-grey ms-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>
-    </div>
-    <!-- <div class="ms-col l3 m6 ms-margin-bottom">
-      <div class="ms-card">
-        <img src="#" alt="Dev" style="width:100%">
-        <div class="ms-container">
-          <h3>Dev</h3>
-          <p class="ms-opacity">Core Team</p>
-          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-          <p><button class="ms-button ms-light-grey ms-block"><i class="fa fa-envelope"></i> Contact</button></p>
-        </div>
-      </div>-->
-    </div>
-  </div>
-</div>
+
 
 <!-- Promo Section "Statistics" -->
 <div class="ms-container ms-row ms-center ms-dark-grey ms-padding-64">
@@ -235,40 +368,55 @@ function checkContactUsForm() {
 </div>
 
 <!-- Star Night Highlights -->
+<!-- Header with full-height image -->
+<% 
+List<HomeImageInsertBeans> HomeList = new ArrayList<HomeImageInsertBeans>();
+
+HomeList = (ArrayList<HomeImageInsertBeans>)request.getSession().getAttribute("homeimageslist");
+int j = 0;
+if(HomeList != null && HomeList.size()>0) {
+	for(HomeImageInsertBeans beans : HomeList) {
+
+		%>
+
+
 <div class="ms-container" style="padding:60px 16px" id="work">
   <h3 class="ms-center">Star Night Highlights</h3>
   <p class="ms-center ms-large">Rock n Roll</p>
 
   <div class="ms-row-padding" style="margin-top:64px">
     <div class="ms-col l3 m6">
-      <img src="images/maninder.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A microphone">
+      <img src="images/<%=beans.getHomeimage1()%>" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A microphone">
+    </div> 
+    <div class="ms-col l3 m6">
+      <img src="images/<%=beans.getHomeimage2()%>" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A phone">
     </div>
     <div class="ms-col l3 m6">
-      <img src="images/ritviz.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A phone">
+      <img src="images/<%=beans.getHomeimage3()%>" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A drone">
     </div>
     <div class="ms-col l3 m6">
-      <img src="images/dance.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A drone">
-    </div>
-    <div class="ms-col l3 m6">
-      <img src="images/ritviz.jpg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="Soundbox">
+      <img src="images/<%=beans.getHomeimage4()%>" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="Soundbox">
     </div>
   </div>
 
   <div class="ms-row-padding ms-section">
     <div class="ms-col l3 m6">
-      <img src="images/star_night1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tablet">
+      <img src="images/<%=beans.getHomeimage5()%>" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tablet">
     </div>
     <div class="ms-col l3 m6">
-      <img src="images/star_night2.jpeg"  style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A camera">
+      <img src="images/<%=beans.getHomeimage6()%>"  style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A camera">
     </div>
     <div class="ms-col l3 m6">
-      <img src="images/ra_DJ.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A typewriter">
+      <img src="images/<%=beans.getHomeimage7()%>" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A typewriter">
     </div>
     <div class="ms-col l3 m6">
-      <img src="images/lt1.jpeg" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tableturner">
+      <img src="images/<%=beans.getHomeimage8()%>" style="width:100%" onclick="onClick(this)" class="ms-hover-opacity" alt="A tableturner">
     </div>
   </div>
 </div>
+<%}
+	}
+	%>
 
 <!-- Modal for full size images on click-->
 <div id="modal01" class="ms-modal ms-black" onclick="this.style.display='none'">
@@ -280,208 +428,132 @@ function checkContactUsForm() {
 </div>
 
 
-<!-- News and Update Section -->
-<div class="ms-container ms-light-grey ms-padding-64" style="margin-bottom:80px">
-  <div class="ms-row-padding">
-    <div class="ms-col m6">
-      <h3>News and Updates</h3>
-    </div>
+
+
+  
+  
+  <div class="container">
+  <h3 style="text-align:center;">Events </h3>  
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="images/concert1.jpg" alt="Los Angeles" style="width:1110px; height:550px;">
+      </div>
+
+      <div class="item">
+        <img src="images/concert2.jpg" alt="Chicago" style="width:1110px; height:550px;">
+      </div>
     
-    <% 
-    List<HomeNewsBeans> newsList = new ArrayList<HomeNewsBeans>();	
-	newsList = (ArrayList<HomeNewsBeans>)request.getSession().getAttribute("newslist");
-	int i = 0;
-	if(newsList != null && newsList.size()>0) {
-	for(HomeNewsBeans beans : newsList) {
-		%>
-		
-      <marquee class="GeneratedMarquee" direction="left" scrollamount="11" behavior="scroll"><%=beans.getNewsheadline()%> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	&nbsp;| &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<% } } %></marquee>
+      <div class="item">
+        <img src="images/concert3.jpg" alt="New york" style="width:1110px; height:550px;">
+      </div>
     </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
-  
-  
-<!-- News and Update Section 
-<div class="ms-container ms-light-grey ms-padding-64" style="margin-bottom:80px">
-  <div class="ms-row-padding">
-    <div class="ms-col m6">
-      <h3>News and Updates</h3>
-    </div>
-      <marquee class="GeneratedMarquee" direction="left" scrollamount="11" behavior="scroll">Star Nights @ 10pm &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	&nbsp;| &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	MUN speakers debate started &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	| &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;	  Beat the street award ceremony at 9pm</marquee>
-    </div>
-  </div>-->
-    <!-- <div class="ms-col m6">
-      <h3>Seats filled</h3>
-      <p class="ms-wide"><i class="fa fa-camera ms-margin-right"></i>Cultural Events</p>
-      <div class="ms-grey">
-        <div class="ms-container ms-dark-grey ms-center" style="width:90%">50%</div>
-      </div>
-      <p class="ms-wide"><i class="fa fa-desktop ms-margin-right"></i>Technical Evants</p>
-      <div class="ms-grey">
-        <div class="ms-container ms-dark-grey ms-center" style="width:85%">85%</div>
-      </div>
-      <p class="ms-wide"><i class="fa fa-photo ms-margin-right"></i>Management Events</p>
-      <div class="ms-grey">
-        <div class="ms-container ms-dark-grey ms-center" style="width:75%">35%</div>
-      </div>
-    </div> -->
-  
-
-
-<!-- Event Section -->
-<div class="ms-container ms-center ms-dark-grey" style="padding:12px 16px" id="pricing">
-  <h3>Events</h3>
-  
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1" class></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2" class></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src="images/lt1.jpeg" alt="BTS" width="700" height="394">
-      <div class="carousel-caption">
-        
-      </div>
-    </div>
-    <div class="item">
-      <img src="images/lt2.jpeg" alt="MUN" width="700" height="394">
-      <div class="carousel-caption">
-        
-      </div>
-    </div>
-     <div class="item">
-      <img src="images/lt4.jpeg" alt="buzz" width="700" height="394">
-      <div class="carousel-caption">
-        
-      </div>
-    </div>
-    
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>
+  
+  
+  
+  
+
+<!-- Team Section -->
+<div class="ms-container" style="padding:128px 16px" id="team">
+  <h3 class="ms-center">THE TEAM</h3>
+  <p class="ms-center ms-large">The ones who run this Fest</p>
+  <div class="ms-row-padding ms-grayscale" style="margin-top:64px">
+    <div class="ms-col l4 m4 sm12 ms-margin-bottom">
+      <div class="ms-card">
+        <img src="images/parikshit.jpeg" alt="Parikshit" style="width:100%; height:550px;">
+        <div class="ms-container">
+          <h3>Parikshit</h3>
+          <p class="ms-opacity">Marketing Head</p>
+          <p> At the helm of the marketing department is the marketing director, tasked with overseeing the development and implementation of marketing strategies, and with guiding the team that executes them. Both online and offline marketing is taken by Marketing head.<br></p>
+        <p><a href="https://www.linkedin.com/in/parikshit-palsania-883919188/" class="ms-button ms-light-grey ms-block"><i class="fa fa-envelope"></i>Contact</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="ms-col l4 m4 sm12 ms-margin-bottom">
+      <div class="ms-card">
+        <img src="images/manas.png" alt="Manas" style="width:100%; height:550px;">
+        <div class="ms-container">
+          <h3>Manas Yadav</h3>
+          <p class="Sponsorship head">Art Director</p>
+          <p>Art directors are responsible for overseeing the care of valuable art pieces within a collection. This role also requires managing staff to ensure the proper care for different pieces of art, as well as ensuring strict guidelines exist that help determine how each piece of art is handled.
+</p>
+         <p><a href="https://www.linkedin.com/in/manas-yadav-83b25a171/" class="ms-button ms-light-grey ms-block"><i class="fa fa-envelope"></i>Contact</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="ms-col l4 m4 sm12 ms-margin-bottom" >
+      <div class="ms-card">
+        <img src="images/lakshay.jpeg" alt="Lakshay" style="width:100%; height:550px;">
+        <div class="ms-container">
+          <h3>Lakshay</h3>
+          <p class="ms-opacity">Web Designer</p>
+          <p>A Web Developer is responsible for the coding, design and layout of a website according to a company's specifications. As the role takes into consideration user experience and function, a certain level of both graphic design and computer programming is necessary.</p>
+         <p><a href="https://www.linkedin.com/in/lakshay-pahuja-684270168/" class="ms-button ms-light-grey ms-block"><i class="fa fa-envelope"></i>Contact</a></p>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="ms-col l3 m6 ms-margin-bottom">
+      <div class="ms-card">
+        <img src="#" alt="Dev" style="width:100%">
+        <div class="ms-container">
+          <h3>Dev</h3>
+          <p class="ms-opacity">Core Team</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="ms-button ms-light-grey ms-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>-->
+    </div>
   </div>
-  <!--  
-  
-  
-  
-  <p class="ms-large">Choose a Event that fits your needs.</p>
-  <div class="ms-row-padding" style="margin-top:64px">
-    <div class="ms-third ms-section">
-      <ul class="ms-ul ms-white ms-hover-shadow">
-        <li class="ms-black ms-xlarge ms-padding-32">Cultural</li>
-        <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Buzz</a>
-        </li>
-        <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Buzz</a>
-        </li>
-        <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Buzz</a>
-        </li>
-        <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Buzz</a>  
-        </li>
-        <li class="ms-padding-16">
-        </li>
-        <li class="ms-light-grey ms-padding-24">
-          <button class="ms-button ms-black ms-padding-large">Register</button>
-        </li>
-      </ul>
-    </div>
-    <div class="ms-third ms-section">
-      <ul class="ms-ul ms-white ms-hover-shadow">
-        <li class="ms-black ms-xlarge ms-padding-32">Technical</li>
-        <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Hackthon</a>
-        </li>
-        <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Hackthon</a>
-        </li>
-        <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Hackthon</a>
-        </li>
-        <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">Hackthon</a>  
-        </li>
-        <li class="ms-padding-16">
-        </li>
-        <li class="ms-light-grey ms-padding-24">
-          <button class="ms-button ms-black ms-padding-large">Register</button>
-        </li>
-      </ul>
-    </div>
-    <div class="ms-third ms-section">
-      <ul class="ms-ul ms-white ms-hover-shadow">
-        <li class="ms-black ms-xlarge ms-padding-32">Management</li>
-        <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">MUN</a>
-        </li>
-        <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">MUN</a>
-        </li>
-        <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">MUN</a>
-        </li>
-        <li class="ms-padding-16">
-        <a href="https://www.instagram.com/bmlmunjaluniversity/?hl=en">MUN</a>  
-        </li>
-        <li class="ms-padding-16">
-        </li>
-        <li class="ms-light-grey ms-padding-24">
-          <button class="ms-button ms-black ms-padding-large">Register</button>
-        </li>
-      </ul>
-    </div>
-    
-  </div> 
-  
-  
-  
-  -->
-  
-  
-
-
-
-
+</div>
+ 
 
 <!-- Contact Section -->
-<div class="ms-container ms-light-grey" style="padding:40px 16px" id="contact">
-  <h3 class="ms-center">CONTACT</h3>
-  <p class="ms-center ms-large">Lets get in touch. Send us a message:</p>
-  <div style="margin-top:48px">
+
+	<div class="ms-container ms-light-grey" style="padding:40px 16px" id="contact">
+	  <h3 class="ms-center">CONTACT</h3>
+	  <p class="ms-center ms-large">Lets get in touch. Send us a message:</p>
+	   <%String success_msg = (String)request.getAttribute("success_msg");
+	          if(success_msg != null && success_msg.length()>0) {
+	        	%><div style="font-size: 14px; font-weight: bold; color: green;" align="center"><%=success_msg%></div><%  
+	          }
+	          String error_msg = (String)request.getAttribute("error_msg");
+	          if(error_msg != null && error_msg.length()>0) {
+	        	%><div style="font-size: 14px; font-weight: bold; color: maroon;" align="center"><%=error_msg%></div><%  
+	          }
+	        %>	
+	  <div style="margin-top:48px">
     
     <br>
-	<% 
-	String error_msg = (String) request.getAttribute("error_msg");
-	if(error_msg != null && error_msg.length()>0) {
-		%>
-		<div style="color: red; font-weight: bold;"><%=error_msg%></div>
-		<%
-	}
-	%>
+	
     <form action="ContactUsAction" method="post" onsubmit="return checkContactUsForm();">
       <p><input class="ms-input ms-border" type="text" placeholder="Name" name="Name" id="name"></p>
       <p><input class="ms-input ms-border" type="text" placeholder="Email" name="Email" id="email"></p>
-      <p>Choose a subject <select id="subject" name="subject">
+      <p>Choose a subject <select id="subject" name="subject" class="ms-input ms-border" >
       <option value="Buzz">Buzz</option>
       <option value="Mun">MUN</option>
       <option value="Bts">BTS</option>
       </select></p>
-      <p><textarea name="message" id="message" rows="5" cols="229" placeholder="Message (Max limit: 100 words)"></textarea></p>
+      <p><textarea name="message" id="message" rows="5" cols="229" placeholder="Message (Max limit: 100 words)" class="ms-input ms-border" ></textarea></p>
 
       <p>
         <button class="ms-button ms-black" type="submit">
@@ -489,16 +561,34 @@ function checkContactUsForm() {
         </button>
       </p>
     </form>
+    <br/>
+    <br/>
+    <br/>
+    <table width="100%">
+    <tr>
+    <td width="20%" valign="top">
     <p><i class="fa fa-map-marker fa-fw ms-xxlarge ms-margin-right"  style="margin-top:30px"></i> Gurgaun, Haryana</p>
     <p><i class="fa fa-phone fa-fw ms-xxlarge ms-margin-right"></i> Phone: 11223344</p>
     <p><i class="fa fa-envelope fa-fw ms-xxlarge ms-margin-right"> </i> Email: bmu.edu.in</p>
-    <p><div class="mapouter">
-      <div class="gmap_canvas"><iframe width="250" height="130" id="gmap_canvas" src="https://maps.google.com/maps?q=bml%20munjal%20university&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/nordvpn-coupon-code/">map</a>
-      </div>
+    </td>
+    <td width="80%" valign="top">
+     <iframe width="100%" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=bml%20munjal%20university&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/nordvpn-coupon-code/"></a>
+   	</td>
+    
+    </table>
+    <p>
     </div>
     </p>  
 </div>
+</div>
 
+
+
+
+<br>
+
+
+<!-- footer -->
 <footer class="ms-center ms-black ms-padding-64">
   <a href="#home" class="ms-button ms-light-grey"><i class="fa fa-arrow-up ms-margin-right"></i>To the top</a>
   <div class="ms-xlarge ms-section">

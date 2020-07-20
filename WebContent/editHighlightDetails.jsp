@@ -34,7 +34,7 @@
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
-                    <a href="Homenewsinsert.jsp">News Insert & View</a>
+                    <a href="HomeNewsAction">News Insert & View</a>
                 </li>
 	            </ul>
 	          </li>
@@ -69,22 +69,14 @@
 	          </li>
 	        </ul>
 
-	        <div class="mb-5">
-						<h3 class="h6">Subscribe for newsletter</h3>
-						<form action="#" class="colorlib-subscribe-form">
-	            <div class="form-group d-flex">
-	            	<div class="icon"><span class="icon-paper-plane"></span></div>
-	              <input type="text" class="form-control" placeholder="Enter Email Address">
-	            </div>
-	          </form>
-					</div>
+	    
 
-	        <div class="footer">
-	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
-	        </div>
-
+	       
 	      </div>
     	</nav>
+    	
+    	
+    	<!-- security for pages -->
 <%
 		String username =(String) request.getSession().getAttribute("username");
 		if(username == null) {

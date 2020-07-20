@@ -127,7 +127,7 @@ function showManagementDetails() {
     <div class="ms-quarter">
       <i class="fa fa-music ms-margin-bottom ms-jumbo ms-center"></i>
       <p class="ms-large">Cultural Events</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+<p>Your body speaks. Dance expresses your emotions. Singing makes you feel on the inside. Theatre unveils your thoughts into action. How about trying out letting our body loose and let it speak? Register now and hold onto the marvelous opportunity in this journey!</p>
       <br/>
       <a href=#showcultural onclick="showCulturalDetails();"><p class="button button1">View</p></a>
       
@@ -136,7 +136,7 @@ function showManagementDetails() {
     <div class="ms-quarter">
       <i class="fa fa-users ms-margin-bottom ms-jumbo"></i>
       <p class="ms-large">Management Events</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Managing is an art. And an art is how you manage. The art of management is not easy. But is easy once you try it passionately. It is not how you manage, it is much more than that. It reaches you through experience and you experience it through opportunities. So, register now for the amazing experience showcasing your management skills!</p>
    	  <br/>
    	  <a href=#showmanagement onclick="showManagementDetails();"><p class="button button1">View</p></a>
      
@@ -144,8 +144,8 @@ function showManagementDetails() {
     <div class="ms-quarter">
       <i class="fa fa-microchip ms-margin-bottom ms-jumbo"></i>
       <p class="ms-large">Technical Events</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-   	  <br/>
+<p>Learning is feasty when you get a reward for it. Learning is fun when you enjoy it. Learning takes you to another whole level of development. So, to gain all of it as an experience and showcase your skills with unique techniques, register now!</p>   
+	  <br/>
    	  <div>
      
      	<a href=#showtechnical onclick="showTechnicalDetails();"><p class="button button1">View</p></a>
@@ -155,7 +155,7 @@ function showManagementDetails() {
     <div class="ms-quarter">
       <i class="fa fa-futbol-o ms-margin-bottom ms-jumbo"></i>
       <p class="ms-large">Sports</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <p>Sports develops personality, Builds stamina, principles of discipline, correction of mistakes, and unity.  A sport speaks its own language, doesn't differentiate amongst the players. All it sees is the hardwork and discipline it has brought to  life and of course, honesty. Register now to be a part of an amazing event and unleashing your talent in sports!</p>
       <br/>
       <a href=#showsports onclick="showSportsDetails();"><p class="button button1">View</p></a>
      

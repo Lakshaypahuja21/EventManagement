@@ -27,7 +27,7 @@
 	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="HeaderImagesShowAction">Header Image Insert & View</a>
+                    <a href="headerImages.jsp">Header Image Insert & View</a>
                 </li>
                 <li>
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
@@ -69,18 +69,18 @@
 	        </ul>
 
 	     
-	        <div class="footer">
-	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
-	        </div>
-
 	      </div>
     	</nav>
+
+<!-- Security for pages  -->
 <%
 		String username =(String) request.getSession().getAttribute("username");
 		if(username == null) {
 			response.sendRedirect("index.jsp");
 		}
 		%>
+		
+		
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
       <table width="100%">

@@ -14,7 +14,10 @@
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/style.css">
-  </head>
+		
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+		
+	  </head>
   <body>
 		
 		<div class="wrapper d-flex align-items-stretch">
@@ -38,7 +41,7 @@
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
-                    <a href="Homenewsinsert.jsp">News Insert & View</a>
+                    <a href="HomeNewsAction">News Insert & View</a>
                 </li>
 	            </ul>
 	          </li>
@@ -74,9 +77,7 @@
 	        </ul>
 
 	        
-	        <div class="footer">
-	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
-	        </div>
+	        
 
 	      </div>
     	</nav>
@@ -103,6 +104,8 @@
         <hr/>
         
         <p>
+    
+        
         	<%String success_msg = (String)request.getAttribute("success_msg");
 	          if(success_msg != null && success_msg.length()>0) {
 	        	%><div style="font-size: 14px; font-weight: bold; color: green;" align="center"><%=success_msg%></div><%  
@@ -121,7 +124,8 @@
 	<br/>
 	<hr/>
 	<br/>
-	<table width="100%" border="1">
+	<table width="100%" border="1" id="studentregd" class="display" >
+	<thead>
 	<tr style="background-color: maroon; color: #ffffff; font-weight: bold; height: 35px;">
 	<td colspan="8" align="center">BDS</td>
 	</tr>
@@ -135,7 +139,8 @@
 	<td>Team Size</td>
 	<td>Entry Date</td>
 	</tr>
-	
+	</thead>
+	<tbody>
 	<%
 	List<RegisterBeans> registerList = new ArrayList<RegisterBeans>();
 	registerList = (ArrayList<RegisterBeans>) request.getSession().getAttribute("registerList");
@@ -157,10 +162,12 @@
 		}	
 	}
 	%>
+	</tbody>
 	</table>
-	<br/><br/>
+	<br/><hr/><br/>
 	<!--                                   tbale for BUZZ                       -->
-	<table width="100%" border="1">
+	<table width="100%" border="1" id="studentregdbuzz" class="display">
+	<thead>
 	<tr style="background-color: maroon; color: #ffffff; font-weight: bold; height: 35px;">
 	<td colspan="8" align="center">BUZZ Details</td>
 	</tr>
@@ -174,7 +181,8 @@
 	<td>Team Size</td>
 	<td>Entry Date</td>
 	</tr>
-	
+	</thead>
+	<tbody>
 	<%
 	List<RegisterBeansBuzz> registerListBuzz = new ArrayList<RegisterBeansBuzz>();
 	registerListBuzz = (ArrayList<RegisterBeansBuzz>) request.getSession().getAttribute("registerListBuzz");
@@ -196,10 +204,12 @@
 		}	
 	}
 	%>
+	</tbody>
 	</table>
-	<br/><br/>
+	<br/><hr/><br/>
 	<!--                                   tabale for MUN                       -->
-	<table width="100%" border="1">
+	<table width="100%" border="1" id="studentregdmun" class="display">
+	<thead>
 	<tr style="background-color: maroon; color: #ffffff; font-weight: bold; height: 35px;">
 	<td colspan="10" align="center">MUN Details</td>
 	</tr>
@@ -215,7 +225,8 @@
 	<td>Team Size</td>
 	<td>Entry Date</td>
 	</tr>
-	
+	</thead>
+	<tbody>
 	<%
 	List<RegisterBeansMun> registerListMun = new ArrayList<RegisterBeansMun>();
 	registerListMun = (ArrayList<RegisterBeansMun>) request.getSession().getAttribute("registerListMun");
@@ -239,6 +250,7 @@
 		}	
 	}
 	%>
+	</tbody>
 	</table>
   </p>
       </div>
@@ -248,5 +260,24 @@
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    
+   <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+			$(document).ready(function() {
+				$('#studentregd').DataTable( {
+					"pagingType": "full_numbers"
+				} );
+				
+				$('#studentregdbuzz').DataTable( {
+					"pagingType": "full_numbers"
+				} );
+				
+				$('#studentregdmun').DataTable( {
+					"pagingType": "full_numbers"
+				} );
+			} );
+		</script>
+	
   </body>
 </html>

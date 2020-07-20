@@ -29,14 +29,14 @@
 	          <li class="active">
 	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li>
+                 <li>
                     <a href="headerImages.jsp">Header Image Insert & View</a>
                 </li>
                 <li>
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
-                    <a href="Homenewsinsert.jsp">News Insert & View</a>
+                    <a href="HomeNewsAction">News Insert & View</a>
                 </li>
 	            </ul>
 	          </li>
@@ -72,12 +72,12 @@
 	        </ul>
 
 	      
-	        <div class="footer">
-	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
-	        </div>
+	        
 
 	      </div>
     	</nav>
+    	
+    	<!-- security for pages -->
 <%
 		String username =(String) request.getSession().getAttribute("username");
 		if(username == null) {

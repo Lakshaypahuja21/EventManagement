@@ -37,7 +37,7 @@
                     <a href="HomeInsert.jsp">Home Images Insert & View</a>
                 </li>
                 <li>
-                    <a href="Homenewsinsert.jsp">News Insert & View</a>
+                    <a href="HomeNewsAction">News Insert & View</a>
                 </li>
 	            </ul>
 	          </li>
@@ -73,12 +73,13 @@
 	        </ul>
 
 
-	        <div class="footer">
-	        	<p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a>Event Management</a></p>
-	        </div>
+	  
 
 	      </div>
     	</nav>
+    	
+    	<!-- security  -->
+    	
 <%
 		String username =(String) request.getSession().getAttribute("username");
 		if(username == null) {
@@ -112,9 +113,7 @@
 								<div class="col-lg-6" >
 									<h3>Insert News</h3>								
 									<form action="HomeNewsAction" method="post">
-										<label >Enter Text</label>
-								  		<textarea name="message" rows="5"  placeholder="After typing every news put 5 spaces before another news (Max word limit 100)">
-								  		</textarea>
+										<textarea name="Newsheadline" rows="5"  placeholder="After typing every news put 5 spaces before another news (Max word limit 100)" style="width: 400px; height: 200px;"></textarea>
 								  		<br><br>
 								  		<input type="submit">
 									</form>
@@ -134,6 +133,7 @@
 			<table width="100%" border="1">
 			<tr style="background-color: blue; color: #ffffff; font-weight: bold; height: 35px;">
 			<td>News headline</td>
+			<td>Delete</td>
 			
 			</tr>
         	
@@ -147,9 +147,7 @@
 					%>
 					<tr>
 					<td><%=homeNewsBeans.getNewsheadline() %></td>
-					
-					
-					
+					<td><a href="DeleteNewsId?news_id=<%=homeNewsBeans.getNewsid()%>">DELETE</a></td>
 					</tr>
 					<%
 				}
